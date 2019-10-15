@@ -5,6 +5,7 @@
 感谢：https://github.com/Chen-Jr/ICPC-Code-Template-in-Latex
 
 ##编辑说明
+
 1. 每次在一级目录中增加完新的一级后需要修改`config`。
 2. 主文件中的 `head`、`tail`、`main.cpp`文件**最好不要**修改。
 3. 一级目录中的`config`文件为当前目录的配置文件，主要用来控制Subsection的输出及判定是否存在Subsubsection。该文件存在四个参数：
@@ -17,4 +18,5 @@
 5. 每次上传完代码后都主动修改一下config文件！
 
 ##聊天室
-**TuDouuuuu：**我写markdown好累。
+
+**TuDouuuuu：**我写markdown好累，累了累了。
