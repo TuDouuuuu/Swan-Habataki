@@ -1,19 +1,16 @@
-\documentclass[10pt,a4paper]{article}
-%\usepackage{zh_CN-Adobefonts_external}
-\usepackage{xeCJK}
-\usepackage{amsmath, amsthm}
-\usepackage{listings,xcolor}
-\usepackage{geometry} % 设置页边距
-\usepackage{fontspec}
-\usepackage{graphicx}
-\usepackage[colorlinks]{hyperref}
-\usepackage{setspace}
-\usepackage{fancyhdr} % 自定义页眉页脚
+\documentclass{article}
+\usepackage{fontspec, xunicode, xltxtra} 
+\setmainfont{Microsoft YaHei} 
+\usepackage{ctex} 
+\usepackage[margin=1in]{geometry}
+\usepackage[Glenn]{fncychap}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{verbatim}
 
 
-\setsansfont{Consolas} % 设置英文字体
-\setmonofont[Mapping={}]{Consolas} % 英文引号之类的正常显示，相当于设置英文字体
-
+\setsansfont{Consolas} %
+\setmonofont[Mapping={}]{Consolas} % 
 \linespread{1.2}
 
 \title{Template For ICPC}
@@ -24,7 +21,7 @@
 
 \pagestyle{fancy}
 
-\lhead{\CJKfamily{kai} GuangDong University of Technology} %以下分别为左中右的页眉和页脚
+\lhead{\CJKfamily{kai} Zhejiang University of Technology} 
 \chead{}
 
 \rhead{\CJKfamily{kai} 第 \thepage 页}
