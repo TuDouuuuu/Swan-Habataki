@@ -16,7 +16,7 @@ dep是结点的深度
 //---------------------加边和预处理--------------------------------
 void eadd(int a,int b)
 {
-	e[idx].v = b;;
+	e[idx].v = b;
 	e[idx].next = first[a];
 	first[a] = idx++;
 }
