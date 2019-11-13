@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}离散化}{1}% 
+\contentsline {subsection}{\numberline {1.1}一维线离散化}{1}% 
+\contentsline {subsection}{\numberline {1.2}二维点离散化}{1}% 
+\contentsline {section}{\numberline {2}矩阵快速幂}{2}% 
+\contentsline {section}{\numberline {3}二进制枚举}{3}% 
+\contentsline {section}{\numberline {4}状态压缩}{3}% 
+\contentsline {section}{\numberline {5}bitset}{3}% 

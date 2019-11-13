@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{fontspec, xunicode, xltxtra} 
+\setmainfont{Microsoft YaHei} 
+\usepackage{setspace}
+\usepackage{ctex} 
+\usepackage{geometry}
+\usepackage[Glenn]{fncychap}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+
+\newfontfamily\monaco{Monaco}
+%\hspace{2em plus 1em minus 0.25em}
+
+%\title{靠别人，你永远是右倾投降主义\\靠自己，你才是工农武装割据}
+%\author{ZJUT14}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\geometry{left=1.7cm,right=1.7cm,top=1.3cm,bottom=1.7cm}
+\setlength{\skip\footins}{0.3cm}
+
+\lstset{
+    frame=simple,
+    language=  c++,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    basicstyle=\small\monaco,
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\bfseries\monaco,%\fontspec{monaco Bold}\bfseries,
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    numbers = left,
+    numberstyle=\tiny\monaco,
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\thispagestyle{empty}
+\pagebreak
+\textbf{图论}
+\pagestyle{plain}
+\tableofcontents
+\end{titlepage}
+
+
+\hspace{3em}
+\section{﻿单调栈&单调队列}
+\subsection{单调栈}
+\lstinputlisting{单调栈&单调队列/单调栈.cpp}
+\subsection{单调队列}
+\lstinputlisting{单调栈&单调队列/单调队列.cpp}
+
+\section{树状数组}
+\subsection{lowbit之和}
+\lstinputlisting{树状数组/lowbit之和.cpp}
+\subsection{区间加减&区间和查询}
+\lstinputlisting{树状数组/区间加减&区间和查询.cpp}
+\subsection{统计前后顺序不同数字对个数（三维偏序问题）}
+\lstinputlisting{树状数组/统计前后顺序不同数字对个数（三维偏序问题）.cpp}
+
+\section{线段树}
+\subsection{ZKW线段树}
+\subsubsection{开局}
+\lstinputlisting{线段树/ZKW线段树/开局.cpp}
+\subsubsection{单点修改+区间查询}
+\lstinputlisting{线段树/ZKW线段树/单点修改+区间查询.cpp}
+\subsubsection{单点修改+区间查询最大字段和}
+\lstinputlisting{线段树/ZKW线段树/单点修改+区间查询最大字段和.cpp}
+\subsubsection{区间加减+单点查询}
+\lstinputlisting{线段树/ZKW线段树/区间加减+单点查询.cpp}
+\subsubsection{区间加减+区间最值查询（lazy标记）}
+\lstinputlisting{线段树/ZKW线段树/区间加减+区间最值查询(lazy标记).cpp}
+\subsection{普通线段树}
+\subsubsection{单点修改&区间查询}
+\lstinputlisting{线段树/普通线段树/单点修改&区间查询.cpp}
+\subsubsection{区间修改&区间查询}
+\lstinputlisting{线段树/普通线段树/区间修改&区间查询.cpp}
+\subsubsection{区间染色}
+\lstinputlisting{线段树/普通线段树/区间染色.cpp}
+\subsubsection{区间修改&区间查询：矩阵}
+\lstinputlisting{线段树/普通线段树/区间修改&区间查询_矩阵ver.cpp}
+
+
+\section{普通平衡树Treap}
+\lstinputlisting{普通平衡树Treap.cpp}
+
+\section{树链剖分}
+\lstinputlisting{树链剖分.cpp}
+
+
+\end{document}

@@ -22,16 +22,7 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\geometry{left=2cm,right=1.7cm,top=2cm,bottom=1.7cm}
-%\rhead{\CJKfamily{kai} 第 \thepage 页}
-%\lfoot{} 
-%\cfoot{\thepage}
-%\rfoot{}
-%\newcommand{\makefirstpageheadrule}{
-%\makebox[0pt][l]{\rule[0.55\baselineskip]{\headwidth}{0.4pt}}
-%\rule[0.7\baselineskip]{\headwidth}{0.4pt}}
-
-%\renewcommand{\footrulewidth}{0.2pt}
+\geometry{left=1.7cm,right=1.7cm,top=1.3cm,bottom=1.7cm}
 \setlength{\skip\footins}{0.3cm}
 
 \lstset{
@@ -59,32 +50,39 @@
 
 \thispagestyle{empty}
 \pagebreak
-\textbf{其它}
+\textbf{图论}
 \pagestyle{plain}
 \tableofcontents
-
+\end{titlepage}
 
 
 \hspace{3em}
-\section{﻿快读}
-\lstinputlisting{快读.cpp}
-\section{int128}
-\lstinputlisting{__int128.cpp}
-\section{对拍}
-\lstinputlisting{对拍.cpp}
-\section{华容道}
-\lstinputlisting{华容道.cpp}
-\section{希尔伯特曲线}
-\begin{figure}[htb] 
- \center{\includegraphics[width=15cm]  {希尔伯特曲线_pic.png}} 
- \end{figure}
-\lstinputlisting{希尔伯特曲线.cpp}
-\section{约瑟夫环}
-\subsection{一般方法}
-\lstinputlisting{约瑟夫环/一般方法.cpp}
-\subsection{函数图像解}
-\lstinputlisting{约瑟夫环/函数图像解.cpp}
+\section{﻿前向星}
+\lstinputlisting{前向星.cpp}
 
-\end{titlepage}
+\section{最短路}
+\subsection{Dijkstra+堆优化}
+\lstinputlisting{最短路/Dijkstra+堆优化.cpp}
+\subsection{SPFA（判环）}
+\lstinputlisting{最短路/SPFA（判环）.cpp}
+\subsection{Floyd}
+\lstinputlisting{最短路/Floyd.cpp}
+
+\section{第K短路}
+\lstinputlisting{第k短路.cpp}
+
+\section{最小环}
+\subsection{Floyd}
+\lstinputlisting{最小环/Floyd.cpp}
+\subsection{Dijkstra+剪枝}
+\lstinputlisting{最小环/Dijkstra+剪枝.cpp}
+
+\section{网络流}
+\subsection{二分图匹配}
+\lstinputlisting{网络流/二分图匹配.cpp}
+\subsection{最大流}
+\subsubsection{Dinic}
+\lstinputlisting{网络流/最大流/Dinic.cpp}
+
 
 \end{document}
