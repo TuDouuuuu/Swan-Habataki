@@ -10,8 +10,8 @@ void exgcd(ll a,ll b,ll &g,ll &x,ll &y)
     y-=(a/b)*x;
 }
 ll n;
-ll as[100005];//n
-ll ns[100005];
+ll as[100005];//n  
+ll ms[100005];
 ll china()
 {
     ll ans=0,lcm=1,x,y,g;
@@ -21,7 +21,7 @@ ll china()
         ll tp=lcm/as[i];
         exgcd(tp,as[i],g,x,y);
         x=(x%as[i]+as[i])%as[i];
-        ans=(ans+tp*x*ns[i])%lcm;
+        ans=(ans+tp*x*ms[i])%lcm;
     }
     return (ans%lcm+lcm)%lcm;
 }

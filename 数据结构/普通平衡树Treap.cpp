@@ -54,7 +54,7 @@ void Remove(int &id,int v){// 删除一个指为v数(若有多个相同的数，
     v < val[id] ? Remove(ch[id][0],v) : Remove(ch[id][1],v);
     pushup(id);
 }
-int get_rank(int id,int v){// 查询v数的排名(排名定义为比当前数小的数的个数+1。若有多个相同的数，因输出最小的排名)
+int get_rank(int id,int v){// 查询v数的排名(排名定义为比当前数小的数的个数+1。 若有多个相同的数，因输出最小的排名)
     if(!id)return 0;
     if(v == val[id])return sz[ch[id][0]] + 1;
     else if(v < val[id])return get_rank(ch[id][0],v);

@@ -9,7 +9,6 @@
 \usepackage{color}
 \usepackage{verbatim}
 \usepackage{fancyhdr}
-\usepackage{graphicx}
 
 
 \newfontfamily\monaco{Monaco}
@@ -22,16 +21,24 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\geometry{left=1.7cm,right=1.7cm,top=1.3cm,bottom=1.7cm}
-\setlength{\skip\footins}{0.3cm}
+\geometry{left=2cm,right=1.7cm,top=1.0cm,bottom=1.5cm}
+%\rhead{\CJKfamily{kai} 第 \thepage 页}
+%\lfoot{} 
+%\cfoot{\thepage}
+%\rfoot{}
+%\newcommand{\makefirstpageheadrule}{
+%\makebox[0pt][l]{\rule[0.55\baselineskip]{\headwidth}{0.4pt}}
+%\rule[0.7\baselineskip]{\headwidth}{0.4pt}}
+
+%\renewcommand{\footrulewidth}{0.2pt}
 
 \lstset{
     frame=simple,
-    language=  c++,
+    language=Java,
     aboveskip=3mm,
     belowskip=3mm,
     showstringspaces=false,
-    basicstyle=\small\monaco,
+    basicstyle=\monaco,
     numbers=none,
     numberstyle=\tiny\color{gray},
     keywordstyle=\bfseries\monaco,%\fontspec{monaco Bold}\bfseries,
@@ -41,7 +48,6 @@
     breakatwhitespace=true,
     tabsize=4,
     numbers = left,
-    numberstyle=\tiny\monaco,
 }
 
 \begin{document}
@@ -57,22 +63,22 @@
 
 
 \hspace{3em}
-\section{﻿离散化}
-\subsection{一维线离散化}
+\subsection{﻿离散化}
+\subsubsection{一维线离散化}
 \lstinputlisting{离散化/一维线离散化.cpp}
-\subsection{二维点离散化}
+\subsubsection{二维点离散化}
 \lstinputlisting{离散化/二维点离散化.cpp}
 
-\section{矩阵快速幂}
+\subsection{矩阵快速幂}
 \lstinputlisting{矩阵快速幂.cpp}
 
-\section{二进制枚举}
+\subsection{二进制枚举}
 \lstinputlisting{二进制枚举.cpp}
 
-\section{状态压缩}
+\subsection{状态压缩}
 \lstinputlisting{状态压缩.cpp}
 
-\section{bitset}
+\subsection{bitset}
 \lstinputlisting{bitset.cpp}
 
 

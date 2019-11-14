@@ -11,14 +11,14 @@ void exgcd(ll a,ll b,ll &g,ll &x,ll &y){
 }
 //a=1( %mod )
 //ax+mod *y=1;
-//x为逆元
+//x涓洪�嗗厓
 int main()
 {
 	ll a,mod,x,y,g;
-	cin>>a;//a为要求的逆元 
+	cin>>a;//a涓鸿姹傜殑閫嗗厓 
 	cin>>mod;
 	exgcd(a,mod,g,x,y);
 	//g=1; 
 	x=(x%mod+mod)%mod;
-	cout<<x;//x为逆元 
+	cout<<x;//x涓洪�嗗厓 
 }

@@ -9,8 +9,8 @@ int f[MAXM],son[MAXM],size[MAXM],dfn[MAXM],dep[MAXM],top[MAXM],seq[MAXM];
 int cnt;
 int mod;
 /*
-f是节点的父亲,son是重儿子,size是以该节点为根的子树大小,dfn是给节点重新编上的序号.
-seq是与dfn相反的数组,表示标到的这个号表示的原节点,top是目前节点所在链的顶端.
+f是节点的父亲,son是重儿子,size是以该节点为根的子树大小, dfn是给节点重新编上的序号.
+seq是与dfn相反的数组,表示标到的这个号表示的原节点, top是目前节点所在链的顶端.
 dep是结点的深度
 */
 

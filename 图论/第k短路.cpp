@@ -5,7 +5,7 @@ int vis[1010];
 int times[1010];//点的访问次数
 int idx,ridx;
 struct node{
-    int p,g,h;//p表示点的编号，g为点到终点的距离（估价），h为点到起点的距离（实际）
+    int p,g,h;//p表示点的编号，g为点到终点的距离（估价）， h为点到起点的距离（实际）
     bool operator < (const node &t)const
     {
         return t.g+t.h<g+h;

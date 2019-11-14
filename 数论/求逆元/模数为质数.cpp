@@ -1,1 +1,1 @@
-inva=powmod(a,mod-2,mod);//¿ìËÙÃÝ
+inva=powmod(a,mod-2,mod);//å¿«é€Ÿå¹‚

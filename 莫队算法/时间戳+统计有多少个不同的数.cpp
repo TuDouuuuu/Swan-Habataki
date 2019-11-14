@@ -15,7 +15,7 @@ void push(int x){
     ans += !vis[x]++;
 }
 bool cmp(node a,node b){// 奇偶排序
-    return (bl[a.l]^bl[b.l])?bl[a.l]<bl[b.l]:((bl[a.r]^bl[b.r])?bl[a.r]<bl[b.r]:a.time<b.time);
+    return (bl[a.l]^bl[b.l]) ? bl[a.l] < bl[b.l] : ((bl[a.r]^bl[b.r]) ? bl[a.r] < bl[b.r] : a.time < b.time);
 }
 void modify(int x){
     if(l <= upd[x].x && upd[x].x <= r){

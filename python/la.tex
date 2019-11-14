@@ -21,7 +21,7 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\geometry{left=2cm,right=1.7cm,top=2cm,bottom=1.7cm}
+\geometry{left=2cm,right=1.7cm,top=1.0cm,bottom=1.5cm}
 %\rhead{\CJKfamily{kai} 第 \thepage 页}
 %\lfoot{} 
 %\cfoot{\thepage}
@@ -31,7 +31,24 @@
 %\rule[0.7\baselineskip]{\headwidth}{0.4pt}}
 
 %\renewcommand{\footrulewidth}{0.2pt}
-\setlength{\skip\footins}{0.3cm}
+
+\lstset{
+    frame=simple,
+    language=Java,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    basicstyle=\monaco,
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\bfseries\monaco,%\fontspec{monaco Bold}\bfseries,
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    numbers = left,
+}
 
 \lstset{
     frame=simple,
