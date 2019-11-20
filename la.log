@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.16)  14 NOV 2019 18:07
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.16)  14 NOV 2019 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -815,12 +815,6 @@ File: 数论/博弈论/非常规_pic.png Graphic file (type bmp)
 (./数论/欧拉函数/线性筛欧拉.cpp [18]) (./数论/欧拉函数/欧拉妙用.cpp
 Missing character: There is no ― in font Monaco/OT!
 Missing character: There is no ― in font Monaco/OT!
-Missing character: There is no φ in font Monaco/OT!
-Missing character: There is no φ in font Monaco/OT!
-Missing character: There is no φ in font Monaco/OT!
-Missing character: There is no φ in font Monaco/OT!
-Missing character: There is no φ in font Monaco/OT!
-Missing character: There is no φ in font Monaco/OT!
  [19]) (./数论/欧拉函数/欧拉降幂.cpp)
 (./数论/扩展欧几里得.cpp) (./数论/同余不等式.cpp [20]) (./数论/高次同余方程.cpp [21])
 (./数论/高斯消元/一般模板(double).cpp [22])
@@ -844,15 +838,16 @@ File: 字符串/KMP/求next2_pic1.png Graphic file (type bmp)
 <字符串/KMP/求next2_pic1.png>
 File: 字符串/KMP/求next2_pic2.png Graphic file (type bmp)
 <字符串/KMP/求next2_pic2.png>
- (./字符串/KMP/求next2.cpp) (./字符串/字符串部分匹配.cpp [32]) (./字符串/求字符串的前缀是否为周期串.cpp) (./字
-符串/字符串由多少相同的字串组成.cpp
-[33]) (./字符串/双倍回文.cpp [34]) (./计算几何/叉积/点线式.cpp [35]) (./计算几何/叉积/重载版.cpp)
-(./计算几何/叉积/叉积算多边形面积.cpp [36]) (./计算几何/极角排序/叉积计算.cpp [37])
-(./计算几何/极角排序/atan2函数计算.cpp [38]) (./计算几何/凸包/一般凸包.cpp [39]) (./计算几何/凸包/最大空凸包.cpp
-[40] [41]) (./计算几何/半平面交/判不等式组是否有解.cpp [42] [43] [44]) (./计算几何/半平面交/半平面交存点.cpp
-[45] [46]) (./数据结构/单调栈&单调队列/单调栈.cpp) (./数据结构/单调栈&单调队列/单调队列.cpp)
-(./数据结构/树状数组/lowbit之和.cpp [47]) (./数据结构/树状数组/区间加减&区间和查询.cpp [48])
-(./数据结构/树状数组/统计前后顺序不同数字对个数（三维偏序问题）.cpp [49]
+ (./字符串/KMP/求next2.cpp) (./字符串/字符串部分匹配.cpp [32]) (./字符串/求字符串的前缀是否为周期串.cpp) [33]
+
+(./字符串/字符串由多少相同的字串组成.cpp) (./字符串/双倍回文.cpp [34]) (./计算几何/叉积/点线式.cpp [35])
+(./计算几何/叉积/重载版.cpp) (./计算几何/叉积/叉积算多边形面积.cpp [36]) (./计算几何/极角排序/叉积计算.cpp
+[37]) (./计算几何/极角排序/atan2函数计算.cpp [38]) (./计算几何/凸包/一般凸包.cpp [39])
+(./计算几何/凸包/最大空凸包.cpp [40] [41]) (./计算几何/半平面交/判不等式组是否有解.cpp [42] [43] [44])
+(./计算几何/半平面交/半平面交存点.cpp [45] [46]) (./数据结构/单调栈&单调队列/单调栈.cpp)
+(./数据结构/单调栈&单调队列/单调队列.cpp) (./数据结构/树状数组/lowbit之和.cpp [47])
+(./数据结构/树状数组/区间加减&区间和查询.cpp [48]) (./数据结构/树状数组/统计前后顺序不同数字对个数（三维偏序问题）.cpp
+[49]
 Overfull \hbox (5.8065pt too wide) in paragraph at lines 38--39
 [][][][][][][][][][][][][][][]  
  []
@@ -916,7 +911,7 @@ Missing character: There is no 列 in font SimSun/OT:script=hani;language=DFLT;!
 Here is how much of TeX's memory you used:
  25596 strings out of 492922
  513331 string characters out of 6136750
- 792526 words of memory out of 5000000
+ 793067 words of memory out of 5000000
  29069 multiletter control sequences out of 15000+600000
  533672 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
