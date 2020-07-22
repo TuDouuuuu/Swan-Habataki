@@ -1,4 +1,4 @@
-void exgcd(ll a,ll b,ll &g,ll &x,ll &y)//ax+by=gcd(a,b)=g
+void exgcd(ll a,ll b,ll &g,ll &x,ll &y) {//ax+by=gcd(a,b)=g
 {
     if (b == 0) {
         g = a;
