@@ -1,31 +1,8 @@
 //叉积计算极角（精度高，时间长） 
-struct point{
-    double x, y;
-    point(double x = 0, double y = 0) : x(x), y(y) {}
-    point operator-(const point &t) const
-    {
-        return point(x - t.x, y - t.y);
-    } //a - b
-    double operator*(const point &t) const
-    {
-        return x * t.x + y * t.y;
-    } //a * b
-    double operator^(const point &t) const
-    {
-        return x * t.y - y * t.x;
-    } //a X b
-    double dis(const point &t)
-    {
-        return sqrt((x - t.x) * (x - t.x) + (y - t.y) * (y - t.y));
-    }
-
-} p[N], xp[N];
-double compare(point a, point b, point c) //计算极角 ab × ac
-{
+double compare(point a, point b, point c) {//计算极角 ab × ac
     return (b - a) ^ (c - a);
 }
-bool cmp(point a, point b)
-{
+bool cmp(point a, point b) {
     double f = compare(p[pos], a, b);
     if (f == 0)
         return a.x - p[pos].x < b.x - p[pos].x;
