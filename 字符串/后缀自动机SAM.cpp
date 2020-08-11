@@ -6,6 +6,7 @@ public:
         rt = 1;
         link[1] = maxlen[1] = 0;
         memset(trans[0], 0, sizeof(trans[0]));
+        memset(trans[1], 0, sizeof(trans[1]));
     }
 
     Suffix_Automaton() { init(); }
@@ -24,6 +25,7 @@ public:
             }
         }
         int z = ++rt, p = last;
+        memset(trans[z], 0, sizeof(trans[z]));
         maxlen[z] = maxlen[last] + 1;
         while (p && !trans[p][ch]) trans[p][ch] = z, p = link[p];
         if (!p) link[z] = 1;
