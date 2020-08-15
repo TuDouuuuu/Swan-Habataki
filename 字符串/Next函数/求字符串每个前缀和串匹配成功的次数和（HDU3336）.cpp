@@ -27,7 +27,7 @@ int main() {
         nex[1] = -1;
         int res = 0;
         for (int i = 1; i <= len; i++) {
-            last = get_next(str + 1, len, nex + 1, i, last);
+            last = get_next(str + 1, len, nex + 1, i, last); 
             if (nex[i] < 0) val[i] = 1;
             else val[i] = (val[nex[i] + 1] + 1) % mod;
             res = (res + val[i]) % mod;

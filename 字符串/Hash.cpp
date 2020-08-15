@@ -1,6 +1,6 @@
 typedef unsigned long long ull;
 namespace hash{
-    const ull seed = 31;
+    const ull seed = 19260817;
     ull base[SIZE],hash[SIZE];
     void init(){
         base[0]=1;
@@ -12,6 +12,6 @@ namespace hash{
     }
 
     void getHash(char str[],int len){
-        for(int i = 1;i <= len;i++)hash[i] = hash[i-1]*seed + str[i]-'a';
+        for(int i = 1;i <= len;i++)hash[i] = hash[i-1]*seed + str[i]-'a'+3;
     }
 };

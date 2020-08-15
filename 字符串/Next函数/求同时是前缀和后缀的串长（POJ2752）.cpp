@@ -7,7 +7,7 @@ int main() {
     while (~scanf("%s", s + 1)) {
         int cnt = 0;
         int len;
-        get_next(s + 1, len = strlen(s + 1), nex + 1);
+        get_next(s + 1, len = strlen(s + 1), nex + 1);  // 方法1
         for (int t = nex[len]; ~t; t = nex[t+1]) {
             if (s[t+1] == s[len]) ans[cnt++] = t + 1;
         }

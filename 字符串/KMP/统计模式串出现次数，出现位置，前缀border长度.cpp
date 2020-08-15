@@ -7,7 +7,7 @@ int nex[MAXN];
 int kmp(char x[], int x_len, char y[], int y_len) {
     int i, j;
     int ans = 0;
-    get_next(x, x_len, nex);
+    get_next(x, x_len, nex);    // 方法1
     for (j = -1, i = 0; i < y_len; i++) {
         while (~j && x[j + 1] != y[i])j = nex[j];
         if (x[j + 1] == y[i])j++;
