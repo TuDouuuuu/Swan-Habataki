@@ -1,16 +1,10 @@
-/*
-    [NOI2014]动物园
-    对于字符串SS的前ii个字符构成的子串，既是它的后缀同时又是它的前缀，并且该后缀与该前缀不重叠，将这种字符串的数量记作num[i]
-    res为(num[i]+1)的乘积
-    时间复杂度：O(n)
-*/
 int main() {
     int T;
     scanf("%d", &T);
     while (T--) {
         scanf("%s", str + 1);
         int len;
-        get_next(str, len = strlen(str + 1), nex);
+        get_next(str, len = strlen(str + 1), nex);  // 方法2
         for (int i = 1; i <= len; i++) {
             val[i] = (val[nex[i]] + 1) % mod;
         }

@@ -13,7 +13,7 @@ int main() {
     int cas = 0;
     while (~scanf("%d", &n) && n) {
         scanf("%s", str+1);
-        get_next(str+1, n, nex+1);
+        get_next(str+1, n, nex+1);  // 方法1
         for (int i = 2; i <= n; i++) {
             if (nex[i] != -1 && (i % (i - nex[i] - 1) == 0))
                 printf("%d %d\n", i, i / (i - nex[i] - 1));

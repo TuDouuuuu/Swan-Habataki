@@ -10,7 +10,7 @@ int main() {
         int la = strlen(a + 1), lb = strlen(b + 1);
         strcat(a + 1, b + 1);
         int len = la + lb;
-        get_next(a + 1, len, nex + 1);
+        get_next(a + 1, len, nex + 1);  // 方法1
         int k;
         for (k = nex[len]; k >= la || k >= lb; k = nex[k+1]);
         if (k == -1) puts("0");

@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{fontspec, xunicode, xltxtra} 
+\setmainfont{Microsoft YaHei} 
+\usepackage{setspace}
+\usepackage{ctex} 
+\usepackage{geometry}
+\usepackage[Glenn]{fncychap}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+
+
+\newfontfamily\monaco{Monaco}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\geometry{left=2.5cm,right=1.7cm,top=1.0cm,bottom=1.5cm}
+
+\lstset{
+    frame=simple,
+    language=c++,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    basicstyle=\monaco,
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\bfseries\monaco,%\fontspec{monaco Bold}\bfseries,
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    numbers = left,
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\thispagestyle{empty}
+\pagebreak
+\pagestyle{plain}
+\tableofcontents
+\end{titlepage}
+
+%----------------------字符串--------------------
+\section{字符串}
+
+\subsection{Next函数}
+\subsubsection{求next函数}
+\lstinputlisting{字符串/Next函数/求next函数.cpp}
+\subsubsection{求出每个循环节的数量和终点位置（HDU1358）}
+\lstinputlisting{字符串/Next函数/求出每个循环节的数量和终点位置（HDU1358）.cpp}
+\subsubsection{求同时是前缀和后缀的串长（POJ2752）}
+\lstinputlisting{字符串/Next函数/求同时是前缀和后缀的串长（POJ2752）.cpp}
+\subsubsection{求字符串每个前缀和串匹配成功的次数和（HDU3336）}
+\lstinputlisting{字符串/Next函数/求字符串每个前缀和串匹配成功的次数和（HDU3336）.cpp}
+\subsubsection{求循环节数量（POJ2406）}
+\lstinputlisting{字符串/Next函数/求循环节数量（POJ2406）.cpp}
+\subsubsection{求第一个串的前缀和第二个串的后缀的最大匹配（HDU2594）}
+\lstinputlisting{字符串/Next函数/求第一个串的前缀和第二个串的后缀的最大匹配（HDU2594）.cpp}
+\subsubsection{求补上最少字母数量使得这是个循环串（HDU3746）}
+\lstinputlisting{字符串/Next函数/求补上最少字母数量使得这是个循环串（HDU3746）.cpp}
+\subsubsection{习题整理}
+\textbf{[NOI2014]动物园}\par
+对于字符串$S$的前i个字符构成的子串，既是它的后缀同时又是它的前缀，并且该后缀与该前缀不重叠，将这种字符串的数量记作$num[i]$.\par
+$res$为$(num[i]+1)$的乘积.\par
+时间复杂度：$O(n).$
+\lstinputlisting{字符串/Next函数/习题整理.cpp}
+
+\subsection{KMP}
+\subsubsection{统计模式串出现次数，出现位置，前缀border长度}
+\lstinputlisting{字符串/KMP/统计模式串出现次数，出现位置，前缀border长度.cpp}
+\subsubsection{矩阵加速KMP,求长度为n的不包含长度为m的子串的串个数（[HNOI2008]GT考试）}
+$$\sum_{k=0}^{m-1}f[i-1][k]\ast g[k][j]$$\par
+$f[i][j]$ 为长串匹配到第$i$位，短串最多可以匹配到第$j$位的方案数\par
+$g[j][k]$ 为了计算长度为$j$的已经匹配好了的串可以用多少种数字变为$k$，枚举一个数字，看它在短串中最长可以匹配到最多多长的前缀\par
+\lstinputlisting{字符串/KMP/矩阵加速KMP（[HNOI2008]GT考试）.cpp}
+
+\subsection{EXKMP}
+
+\subsection{AC自动机}
+\subsubsection{标准的AC自动机}
+\lstinputlisting{字符串/AC自动机.cpp}
+
+\subsection{后缀自动机SAM}
+\subsubsection{后缀自动机板子}
+\textbf{应用1：不同子串个数}\par
+给一个字符串$S$，计算不同子串的个数。\par
+解法：利用后缀自动机的树形结构。每个节点对应的不同子串数量(不同位置算作同一个)是$maxlen[i]-maxlen[link[i]]$。\par
+总时间复杂度：O(|S|).
+\textbf{应用2：所有不同子串的总长度}\par
+给定一个字符串$S$，计算所有不同子串的总长度。
+解法：利用上述后缀自动机的树形结构。每个节点对应的所有后缀长度是$\frac{maxlen[i]\ast (maxlen[i]+1)}{2}$，减去其$linke$节点的对应值$\frac{maxlen[link[i]]\ast (maxlen[link[i]]+1)}{2}$就是该节点的净贡献
+
+\lstinputlisting{字符串/后缀自动机SAM/后缀自动机SAM.cpp}
+
+\end{document}
