@@ -15,13 +15,17 @@ public:
     inline int insert(int ch, int last) {   // main: last = 1
         if (trans[last][ch]) {
             int p = last, x = trans[p][ch];
-            if (maxlen[p] + 1 == maxlen[x]) return x;
+            if (maxlen[p] + 1 == maxlen[x]) {
+                val[x]++;
+                return x;
+            }
             else {
                 int y = ++rt;
                 maxlen[y] = maxlen[p] + 1;
                 for (int i = 0; i < MAXC; i++) trans[y][i] = trans[x][i];
                 while (p && trans[p][ch] == x) trans[p][ch] = y, p = link[p];
                 link[y] = link[x], link[x] = y;
+                val[y]++;
                 return y;
             }
         }
