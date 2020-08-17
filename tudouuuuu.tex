@@ -82,6 +82,17 @@ $g[j][k]$ 为了计算长度为$j$的已经匹配好了的串可以用多少种�
 \lstinputlisting{字符串/KMP/矩阵加速KMP（[HNOI2008]GT考试）.cpp}
 
 \subsection{EXKMP}
+\subsubsection{求z函数和LCP}
+$LCP$：最长公共前缀\par
+$z$函数数组$z$：串$b$与$b$的每一个后缀的$LCP$长度。\par
+$extend$数组：串$b$与串$a$的每一个后缀的$LCP$长度。
+总时间复杂度：$O(|a|+|b|)$.
+\lstinputlisting{字符串/EXKMP/求z函数和LCP.cpp}
+\subsubsection{循环位移有多少数比原数大小相等，去重（HDU4333）}
+包含对获得的串进行去重。\par
+总时间复杂度：$O(n)$
+\lstinputlisting{字符串/EXKMP/循环位移有多少数比原数大小相等，去重（HDU4333）.cpp}
+
 
 \subsection{AC自动机}
 \subsubsection{标准的AC自动机}
@@ -92,11 +103,14 @@ $g[j][k]$ 为了计算长度为$j$的已经匹配好了的串可以用多少种�
 \textbf{应用1：不同子串个数}\par
 给一个字符串$S$，计算不同子串的个数。\par
 解法：利用后缀自动机的树形结构。每个节点对应的不同子串数量(不同位置算作同一个)是$maxlen[i]-maxlen[link[i]]$。\par
-总时间复杂度：O(|S|).
+总时间复杂度：$O(|S|)$.
 \textbf{应用2：所有不同子串的总长度}\par
 给定一个字符串$S$，计算所有不同子串的总长度。
 解法：利用上述后缀自动机的树形结构。每个节点对应的所有后缀长度是$\frac{maxlen[i]\ast (maxlen[i]+1)}{2}$，减去其$linke$节点的对应值$\frac{maxlen[link[i]]\ast (maxlen[link[i]]+1)}{2}$就是该节点的净贡献
-
 \lstinputlisting{字符串/后缀自动机SAM/后缀自动机SAM.cpp}
+
+\subsection{回文自动机PAM}
+
+
 
 \end{document}
