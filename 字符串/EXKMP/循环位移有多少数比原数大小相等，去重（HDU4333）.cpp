@@ -20,6 +20,6 @@ int main() {
             else G++;
         }
         printf("Case %d: ", kase++);
-        printf("%d %d %d\n", L/E, E/E, G/E);
+        printf("%d %d %d\n", L/E, E/E, G/E);    // 去重相关
     }
 }

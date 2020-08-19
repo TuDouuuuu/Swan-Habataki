@@ -98,15 +98,15 @@ public:
         pushup(root);
     }
 
-    void insert(int x) { _insert(root, x); }
+    void insert(int x) { _insert(root, x); }    // 插入x数
 
-    void remove(int x) { _Remove(root, x); }
+    void remove(int x) { _Remove(root, x); }    // 删除x数(若有多个相同的数，因只删除一个)
 
-    int get_rank(int x) { return _get_rank(root, x) - 1; }
+    int get_rank(int x) { return _get_rank(root, x) - 1; }  // 查询x数的排名(排名定义为比当前数小的数的个数+1)
 
-    int get_val(int x) { return _get_val(root, x + 1); }
+    int get_val(int x) { return _get_val(root, x + 1); }    // 查询排名为x的数
 
-    int get_pre(int x) { return _get_pre(x); }
+    int get_pre(int x) { return _get_pre(x); }  // 求x的前驱(前驱定义为小于x，且最大的数)
 
-    int get_next(int x) { return _get_next(x); }
+    int get_next(int x) { return _get_next(x); }    // 求x的后继(后继定义为大于x，且最小的数)
 } tree;

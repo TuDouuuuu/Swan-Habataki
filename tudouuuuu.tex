@@ -47,8 +47,35 @@
 \tableofcontents
 \end{titlepage}
 
+%----------------------STL--------------------
+\section{STL}
+
+\subsection{unordered\_map对pii进行哈希}
+\lstinputlisting{STL/unordered_map对pii进行哈希.cpp}
+\subsection{pb\_ds实现平衡树}
+\lstinputlisting{STL/pb_ds实现平衡树.cpp}
+
+%----------------------数据结构-------------------
+\section{数据结构}
+\subsection{单调栈}
+\subsection{单调队列}
+\subsection{笛卡尔树}
+\subsection{树状数组}
+\subsection{线段树}
+\subsection{扫描线}
+\subsection{可持久化线段树（主席树）}
+
+\subsection{动态树LCT}
+
+\subsection{Splay}
+\subsection{Treap}
+
+
+
+
 %----------------------字符串--------------------
 \section{字符串}
+
 
 \subsection{Next函数}
 \subsubsection{求next函数}
@@ -103,13 +130,19 @@ $extend$数组：串$b$与串$a$的每一个后缀的$LCP$长度。
 \textbf{应用1：不同子串个数}\par
 给一个字符串$S$，计算不同子串的个数。\par
 解法：利用后缀自动机的树形结构。每个节点对应的不同子串数量(不同位置算作同一个)是$maxlen[i]-maxlen[link[i]]$。\par
-总时间复杂度：$O(|S|)$.
+总时间复杂度：$O(|S|)$.\par
 \textbf{应用2：所有不同子串的总长度}\par
 给定一个字符串$S$，计算所有不同子串的总长度。
 解法：利用上述后缀自动机的树形结构。每个节点对应的所有后缀长度是$\frac{maxlen[i]\ast (maxlen[i]+1)}{2}$，减去其$linke$节点的对应值$\frac{maxlen[link[i]]\ast (maxlen[link[i]]+1)}{2}$就是该节点的净贡献
 \lstinputlisting{字符串/后缀自动机SAM/后缀自动机SAM.cpp}
+\subsubsection{每个子串在多少个主串中出现过（SPOJ8093）}
+暴力跳Link链.\par
+时间复杂度：$均摊O(\sum |S|\sqrt{\sum |S|})$
+\lstinputlisting{字符串/后缀自动机SAM/每个子串在多少个主串中出现过（SPOJ8093）.cpp}
+
 
 \subsection{回文自动机PAM}
+
 
 
 
