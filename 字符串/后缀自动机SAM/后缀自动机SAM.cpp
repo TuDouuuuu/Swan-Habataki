@@ -6,7 +6,6 @@ public:
     void init() {
         rt = 1;
         link[1] = maxlen[1] = 0;
-        memset(trans[0], 0, sizeof(trans[0]));
         memset(trans[1], 0, sizeof(trans[1]));
     }
 
@@ -15,8 +14,13 @@ public:
     inline int insert(int ch, int last) {   // main: last = 1
         if (trans[last][ch]) {
             int p = last, x = trans[p][ch];
-            if (maxlen[p] + 1 == maxlen[x]) {
-                val[x]++;
+            // 注意：这里返回的这个节点保存了多个模式串的状态，
+            // 即将多个不同模式串的相同子串信息压缩在了这一个节点内，
+            // 如果要记录endpos大小的话，
+            // 则需要给每个模式串都单独维护一个siz数组依次更新，
+            // 而不能全部揉成一坨
+            if (maxlen[p] + 1 == maxlen[x]) {   // 特判1：这个节点已经存在于SAM中
+                val[x]++;   // 统计在整颗字典树上出现次数
                 return x;
             }
             else {
@@ -25,12 +29,12 @@ public:
                 for (int i = 0; i < MAXC; i++) trans[y][i] = trans[x][i];
                 while (p && trans[p][ch] == x) trans[p][ch] = y, p = link[p];
                 link[y] = link[x], link[x] = y;
-                val[y]++;
+                val[y]++;   // 统计在整颗字典树上出现次数
                 return y;
             }
         }
         int z = ++rt, p = last;
-        val[z] = 1; // dfs树统计出现次数
+        val[z] = 1; // 统计在整颗字典树上出现次数
         memset(trans[z], 0, sizeof(trans[z]));
         maxlen[z] = maxlen[last] + 1;
         while (p && !trans[p][ch]) trans[p][ch] = z, p = link[p];
