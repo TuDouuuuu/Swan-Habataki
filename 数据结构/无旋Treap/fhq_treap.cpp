@@ -1,11 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-typedef long long ll;
-#define inf_int 0x3f3f3f3f
-#define inf_ll 0x3f3f3f3f3f3f3f3f
-const int MAXN = 1e5 + 5;
-
 class Treap {
 public:
     int ch[MAXN][2];

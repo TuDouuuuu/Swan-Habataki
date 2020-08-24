@@ -34,7 +34,7 @@ private:
         else {
             int d = v < val[id] ? 0 : 1;
             _insert(ch[id][d], v);
-            if (dat[id] < dat[ch[id][d]])Rotate(id, d ^ 1);
+            if (dat[id] < dat[ch[id][d]]) Rotate(id, d ^ 1);
         }
         pushup(id);
     }
