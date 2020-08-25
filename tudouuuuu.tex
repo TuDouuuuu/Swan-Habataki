@@ -84,6 +84,25 @@
 $v_i$表示基于的过去版本号，${opt}_i$表示操作的序号，$x_i$表示参与操作的数值。
 \lstinputlisting{数据结构/无旋Treap/可持久化FHQ.cpp}
 
+
+\subsection{KD树}
+\subsubsection{平面最近点对}
+时间复杂度：单次查询最近点的时间复杂度$O(n).$
+\lstinputlisting{数据结构/KD树/平面最近点对.cpp}
+\subsubsection{K远点对([CQOI2016])}
+已知平面内$N$个点的坐标，求欧氏距离下的第$K$远点对。\par
+两个点的欧氏距离为$\sqrt{(x_1-x_2)^{2}+(y_1-y_2)^{2}}$\par
+原题数据范围：$N\leq 1e5, 1\leq K\leq 100$\par
+时间复杂度：$O(kn\log{n}).$
+\lstinputlisting{数据结构/KD树/K远点对.cpp}
+\subsubsection{高维空间上的操作}
+在一个初始值全为$0$的$n\times n$的二维矩阵上，进行若干次操作，每次操作为以下两种之一：\par
+\textbf{1 x y A} 将坐标$(x,y)$上的数加上$A$。\par
+\textbf{2 x1 y1 x2 y2} 输出以$(x1, y1)$为左下角，$(x2, y2$为右上角的矩形内（包括矩形边界）的数字和。\par
+原题数据范围：$1\leq n \leq 5e5, 1\leq q \leq 2e5$\par
+时间复杂度：单次查询时间最优$O(\log{n})$， 最坏$O(\sqrt{n})$。将结论扩展至$k$维，最坏复杂度$O(n^{1-\frac{1}{k}})$
+\lstinputlisting{数据结构/KD树/高维空间上的操作.cpp}
+
 %----------------------字符串--------------------
 \section{字符串}
 
