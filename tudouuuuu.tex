@@ -103,6 +103,16 @@ $v_i$表示基于的过去版本号，${opt}_i$表示操作的序号，$x_i$表�
 时间复杂度：单次查询时间最优$O(\log{n})$， 最坏$O(\sqrt{n})$。将结论扩展至$k$维，最坏复杂度$O(n^{1-\frac{1}{k}})$
 \lstinputlisting{数据结构/KD树/高维空间上的操作.cpp}
 
+
+\subsection{珂朵莉树/老司机树/ODT}
+\subsubsection{set实现珂朵莉树}
+\textbf{1 l r x} 将$[l,r]$区间所有数加上$x$\par
+\textbf{2 l r x} 将$[l,r]$区间所有数改成$x$\par
+\textbf{3 l r x} 输出将$[l,r]$区间从小到大排序后的第$x$个数是的多少(即区间第$x$小，数字大小相同算多次，保证$1\leq x \leqn r-l+1$)\par
+\textbf{4 l r x y} 输出$[l,r]$区间每个数字的$x$次方的和模$y$的值(即$\sum^r_{i=l}a_i^x \mod y $)\par
+时间复杂度：用set实现$O(n\log \log {n})$\par
+如果要保证复杂度正确，必须保证数据随机。\par
+\lstinputlisting{数据结构/ODT/set实现珂朵莉树.cpp}
 %----------------------字符串--------------------
 \section{字符串}
 
