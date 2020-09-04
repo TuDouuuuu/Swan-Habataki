@@ -1,6 +1,6 @@
 char str1[MAXN], str2[MAXN];
 int nex[MAXC], na[MAXN][MAXC], nb[MAXN][MAXC];
-int dp[MAXN][MAXN];
+int dp[MAXN][MAXN]; // 记得开大两倍
 int main() {
     scanf("%s%s", str1 + 1, str2 + 1);
     int len1 = strlen(str1 + 1), len2 = strlen(str2 + 1);
