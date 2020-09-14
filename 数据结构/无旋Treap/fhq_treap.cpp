@@ -6,7 +6,7 @@ public:
     int tot, root;
 
     void init() {
-        tot = 0, root = 1;
+        tot = 0, root = 0;
     }
 
     Treap() { init(); }
