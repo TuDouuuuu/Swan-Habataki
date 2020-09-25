@@ -1,7 +1,7 @@
 int pos[MAXN];  // +1后对应为所建的fail树上的点
 class Palindrome_Tree { public:
     struct node {
-        int ch[MAXC], fail, len;
+        int ch[MAXC], fail, len, num;   // num：以该位置结尾的回文子串个数
     } T[MAXN];
     int las, tot, c[MAXN];
     inline int get_fail(int x, int pos) {
@@ -27,6 +27,7 @@ class Palindrome_Tree { public:
                 memset(T[tot].ch, 0, sizeof(T[tot].ch));
                 int u = get_fail(T[p].fail, i);
                 T[tot].fail = T[u].ch[c[i]];
+                T[tol].num = T[T[tol].fail].num + 1;
                 T[p].ch[c[i]] = tot;
             }
             las = T[p].ch[c[i]];
