@@ -1,3 +1,10 @@
+/*
+    input       output
+    aabbcc      2 4 2 4
+    abcabc
+    aabbcc      -1 -1 2 -1
+    aabbcc
+*/
 char str1[MAXN], str2[MAXN];
 int nex[MAXC], na[MAXN][MAXC], nb[MAXN][MAXC];
 int dp[MAXN][MAXN]; // 记得开大两倍

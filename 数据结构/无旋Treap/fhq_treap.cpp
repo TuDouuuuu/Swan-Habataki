@@ -1,5 +1,4 @@
-class Treap {
-public:
+class Treap { public:
     int ch[MAXN][2];
     int dat[MAXN], siz[MAXN], val[MAXN];
     bool fl[MAXN];
@@ -8,17 +7,14 @@ public:
     void init() {
         tot = 0, root = 0;
     }
-
     Treap() { init(); }
 
-
-    int Newnode(int v) {
+    inline int Newnode(int v) {
         val[++tot] = v;
         dat[tot] = rand();
         siz[tot] = 1;
         return tot;
     }
-
     inline void push_up(int rt) {
         siz[rt] = siz[ch[rt][0]] + siz[ch[rt][1]] + 1;
     }
@@ -78,16 +74,13 @@ public:
         printf("%d ", val[rt]);
         if (ch[rt][1]) dfs(ch[rt][1]);
     }
-
 } tree;
 
 int main() {
-    int n, q;
-    scanf("%d%d", &n, &q);
+    int n, q; scanf("%d%d", &n, &q);
     tree.build(1, n);
     while (q--) {
-        int l, r;
-        scanf("%d%d", &l, &r);
+        int l, r; scanf("%d%d", &l, &r);
         int a, b, c;
         tree.split(tree.root, l - 1, a, b);
         tree.split(b, r - l + 1, b, c);

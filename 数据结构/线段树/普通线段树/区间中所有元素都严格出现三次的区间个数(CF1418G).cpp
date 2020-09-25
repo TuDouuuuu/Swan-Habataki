@@ -14,8 +14,7 @@ struct node {
     node(int _l = 0, int _r = 0, int _v = 0) : l(_l), r(_r), v(_v) {}
 };
 
-class SEG {
-public:
+class SEG { public:
     struct node {
         int l, r, mx, cnt;
     } T[MAXN << 2];
@@ -98,5 +97,4 @@ int main() {
         }
     }
     printf("%lld\n", res);
-
 }

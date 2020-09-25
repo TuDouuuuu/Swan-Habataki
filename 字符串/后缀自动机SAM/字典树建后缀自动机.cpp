@@ -1,4 +1,4 @@
-void bfs() {
+void bfs() {    // 传说常数小
     queue<node> q;
     q.push(node(1, 1));
     int last = 1;
@@ -13,7 +13,7 @@ void bfs() {
     }
 }
 
-void dfs(int u, int last = 1) {
+void dfs(int u, int last = 1) { // 传说常数大
     pos[u] = last = sa.insert(str[u] - 'A', last);
     for (int i = head[u]; ~i; i = e[i].nex) {
         int v = e[i].to;

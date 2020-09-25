@@ -10,8 +10,7 @@
 const int MAXN = 1e6 + 5;
 const int MAXC = 26;
 
-class Suffix_Automaton {
-public:
+class Suffix_Automaton { public:
     int rt, link[MAXN], maxlen[MAXN], trans[MAXN][MAXC];
     int val[MAXN];
 
@@ -20,7 +19,6 @@ public:
         link[1] = maxlen[1] = 0;
         memset(trans[0], 0, sizeof(trans[0]));
     }
-
     Suffix_Automaton() { init(); }
 
     inline int insert(int ch, int last) {   // main: last = 1
@@ -110,14 +108,12 @@ public:
                 sz2[topo_id[i]] += sz2[v];
             }
         }
-
     }
 
-    void query0(int k) {
+    void query0(int k) {    // 不同位置的相同子串算作一个
         if (sz1[1] < k) {
             printf("-1\n"); return ;
         }
-
         int u = 1;
         while (k) {
             for (int i = 0; i < MAXC; i++) {
@@ -134,7 +130,7 @@ public:
         printf("\n");
     }
 
-    void query1(int k) {
+    void query1(int k) {    // 不同位置的相同子串算作多个
         if (sz2[1] < k) {
             printf("-1\n"); return ;
         }
@@ -155,16 +151,3 @@ public:
         printf("\n");
     }
 } sa;
-char str[MAXN];
-int main() {
-    scanf("%s", str + 1);
-    int len = strlen(str + 1);
-    int t, k;
-    scanf("%d%d", &t, &k);
-    int last = 1;
-    for (int i = 1; i <= len; i++) last = sa.insert(str[i] - 'a', last);
-    sa.build();
-  //  sa.debug();
-    if (t == 0) sa.query0(k);
-    else sa.query1(k);
-}

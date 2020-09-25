@@ -60,33 +60,65 @@
 
 
 %----------------------数据结构-------------------
-\section{数据结构}
-\subsection{单调栈}
-\subsection{单调队列}
+% \section{数据结构}
+% \subsection{单调栈}
+% \subsection{单调队列}
+
+\subsection{ST表}
+\lstinputlisting{数据结构/ST表.cpp}
+
 \subsection{笛卡尔树}
-\subsection{树状数组}
+\subsubsection{建树}
+\lstinputlisting{数据结构/笛卡尔树/建树.cpp}
+
+
+% \subsection{树状数组}
 \subsection{线段树}
-\subsection{扫描线}
+\subsubsection{区间中所有元素都严格出现三次的区间个数（CF1418G）}
+\lstinputlisting{数据结构/线段树/普通线段树/区间中所有元素都严格出现三次的区间个数(CF1418G).cpp}
+\subsubsection{线段树分裂合并}
+\lstinputlisting{数据结构/线段树/普通线段树/线段树分裂合并.cpp}
+\subsubsection{单点修改+单点最大连通数（HDU1540）}
+\lstinputlisting{数据结构/线段树/普通线段树/单点修改单点最大连通个数.cpp}
+
+% \subsection{扫描线}
 \subsection{可持久化线段树（主席树）}
+\subsubsection{静态区间第K小}
+\lstinputlisting{数据结构/主席树/静态区间第K小.cpp}
+\subsubsection{区间内不同数个数}
+\lstinputlisting{数据结构/主席树/区间内不同数个数.cpp}
+\subsubsection{静态区间第K小}
+\lstinputlisting{数据结构/主席树/树上路径点权第K大.cpp}
+\subsubsection{区间MEX}
+\lstinputlisting{数据结构/主席树/区间MEX.cpp}
 
-\subsection{动态树LCT}
-\subsubsection{}
-\subsubsection{LCT+HJT主席树统计强连通分块个数}
+% \subsection{动态树LCT}
+% \subsubsection{}
+% \subsubsection{LCT+HJT主席树统计强连通分块个数}
 
 
 
-\subsection{Splay}
-\subsection{有旋Treap}
-\subsubsection{普通平衡树（洛谷P3369）}
-\lstinputlisting{数据结构/有旋Treap/普通平衡树Treap.cpp}
+% \subsection{Splay}
+% \subsection{有旋Treap}
+% \subsubsection{普通平衡树（洛谷P3369）}
+% \lstinputlisting{数据结构/有旋Treap/普通平衡树Treap.cpp}
 \subsection{无旋Treap（FHQ Treap）}
+\subsubsection{区间翻转}
+\lstinputlisting{数据结构/无旋Treap/fhq_treap.cpp}
 
-
-\subsection{可持久化FHQ}
+\subsubsection{可持久化FHQ}
 第一行包含一个正整数$n$，表示操作的总数。\par
 接下来$n$行，每行包含三个整数，第$i$行记为${v}_{i}$, ${opt}_i$, $x_i$。\par
 $v_i$表示基于的过去版本号，${opt}_i$表示操作的序号，$x_i$表示参与操作的数值。
 \lstinputlisting{数据结构/无旋Treap/可持久化FHQ.cpp}
+
+
+\subsection{树套树}
+\subsubsection{带修主席树}
+\lstinputlisting{数据结构/树套树/带修主席树.cpp}
+\subsubsection{区间修改区间查询第K大（[ZJOI2013]K大数查询）}
+\lstinputlisting{数据结构/树套树/区间修改区间查询第K大（[ZJOI2013]K大数查询）.cpp}
+
 
 
 \subsection{KD树}
@@ -112,8 +144,8 @@ $v_i$表示基于的过去版本号，${opt}_i$表示操作的序号，$x_i$表�
 \subsubsection{set实现珂朵莉树}
 \textbf{1 l r x} 将$[l,r]$区间所有数加上$x$\par
 \textbf{2 l r x} 将$[l,r]$区间所有数改成$x$\par
-\textbf{3 l r x} 输出将$[l,r]$区间从小到大排序后的第$x$个数是的多少(即区间第$x$小，数字大小相同算多次，保证$1\leq x \leqn r-l+1$)\par
-\textbf{4 l r x y} 输出$[l,r]$区间每个数字的$x$次方的和模$y$的值(即$\sum^r_{i=l}a_i^x \mod y $)\par
+\textbf{3 l r x} 输出将$[l,r]$区间从小到大排序后的第$x$个数是的多少(即区间第$x$小，数字大小相同算多次，保证$1\leq x \leq r-l+1$)\par
+\textbf{4 l r x y} 输出$[l,r]$区间每个数字的$x$次方的和模$y$的值(即$\sum ^ {r}_{i=l} a_i^x \% y$)\par
 时间复杂度：用set实现$O(n\log \log {n})$\par
 如果要保证复杂度正确，必须保证数据随机。\par
 \lstinputlisting{数据结构/ODT/set实现珂朵莉树.cpp}
@@ -123,8 +155,8 @@ $v_i$表示基于的过去版本号，${opt}_i$表示操作的序号，$x_i$表�
 \subsection{字符串哈希}
 \subsubsection{区间一维哈希}
 \lstinputlisting{字符串/Hash/Hash.cpp}
-\subsubsection{二维哈希}
-\lstinputlisting{}
+% \subsubsection{二维哈希}
+% \lstinputlisting{}
 
 
 
@@ -176,7 +208,21 @@ $extend$数组：串$b$与串$a$的每一个后缀的$LCP$长度。
 \subsubsection{标准的AC自动机}
 \lstinputlisting{字符串/AC自动机.cpp}
 
+\subsection{字典树/Trie树}
+\lstinputlisting{字符串/Trie字典树.cpp}
+
+% \subsection{序列自动机}
+% \lstinputlisting{字符串/序列自动机.cpp}
+
+% \subsection{最小表示法}
+% \lstinputlisting{字符串/最小表示法.cpp}
+
+
 \subsection{后缀数组SA}
+\subsubsection{获取SA和rank数组}
+\lstinputlisting{字符串/后缀数组/get_SA.cpp}
+\subsubsection{后缀数组+ST表求lcp}
+\lstinputlisting{字符串/后缀数组/后缀数组+ST表求lcp.cpp}
 
 
 \subsection{后缀自动机SAM}
@@ -193,12 +239,20 @@ $extend$数组：串$b$与串$a$的每一个后缀的$LCP$长度。
 暴力跳Link链.\par
 时间复杂度：$均摊O(\sum |S|\sqrt{\sum |S|})$
 \lstinputlisting{字符串/后缀自动机SAM/每个子串在多少个主串中出现过（SPOJ8093）.cpp}
+\subsubsection{第k小字串}
+\lstinputlisting{字符串/后缀自动机SAM/第k小字串（不同位置的相同子串算作一个&多个）（[TJOI2015]弦论）.cpp}
+\subsubsection{字典树建后缀自动机}
+\lstinputlisting{字符串/后缀自动机SAM/字典树建后缀自动机.cpp}
+\subsubsection{暴力在线统计出现次数为k次的字符串个数（HDU4641）}
+\lstinputlisting{字符串/后缀自动机SAM/暴力在线统计出现次数为k次的字符串个数（HDU4641）.cpp}
 
 
-\subsection{Manacher}
+% \subsection{Manacher}
 
 
 \subsection{回文自动机PAM}
+\lstinputlisting{字符串/回文自动机/回文自动机PAM.cpp}
+
 
 \subsection{序列自动机（[HEOI2015]最短不公共子串）}
 时间复杂度：$O(n|\sum|)$，其中$|\sum|$为字符集大小
@@ -209,32 +263,38 @@ $extend$数组：串$b$与串$a$的每一个后缀的$LCP$长度。
 \lstinputlisting{字符串/最小表示法.cpp}
 
 \subsection{Lyndon分解}
-
+将字符串分成若干部分$s = s_{1}s_{2}s_{3}...s_{m}$，使得每个$s_{i}$都是$Lyndon Word$。\par
+$Lyndon Word$：当且仅当$s$是其所有后缀中最小字符串。
+\lstinputlisting{字符串/Lyndon分解.cpp}
 
 %----------------------动态规划--------------------
-\section{动态规划}
-\subsection{背包DP}
+% \section{动态规划}
+% \subsection{背包DP}
 
-\subsection{区间DP}
+% \subsection{区间DP}
 
-\subsection{DAG上DP}
+% \subsection{DAG上DP}
 
-\subsection{数型DP}
+% \subsection{数型DP}
 
 
 %----------------------杂项-------------------
 \section{杂项}
 \subsection{LCA}
-
-\subsection{三分}
+\lstinputlisting{杂项/LCA.cpp}
+% \subsection{三分}
 
 \subsection{CDQ}
+\subsubsection{三维偏序}
+有$n$个元素，第$i$个元素有$a_i$,$b_i$,$c_i$三个属性，设$f(i)$表示满足$a_j \leq a_i$且$b_j \leq b_i$且$c_j \leq c_i$且$j \ne i$的$j$的数量。\par
+对于$d\in [0, n)$，求$f(i)=d$的数量。
+\lstinputlisting{杂项/CDQ/三位偏序.cpp}
 
-\subsection{莫队}
+% \subsection{莫队}
 
-\subsection{格雷码}
+% \subsection{格雷码}
 
-\subsection{可撤销并查集}
+% \subsection{可撤销并查集}
 
 
 \end{document}

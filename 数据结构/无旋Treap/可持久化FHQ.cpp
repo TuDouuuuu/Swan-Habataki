@@ -1,5 +1,4 @@
-class FHQ {
-public:
+class FHQ { public:
     const int MAXM = 50 * MAXN; // 50倍注意！
     int ch[MAXM][2];
     int dat[MAXM], siz[MAXM], val[MAXM];
@@ -111,8 +110,7 @@ public:
 int root[MAXN];
 
 int main() {
-    int q;
-    scanf("%d", &q);
+    int q; scanf("%d", &q);
     tree.init();
     for (int i = 1; i <= q; i++) {
         int ver, opt, x;
