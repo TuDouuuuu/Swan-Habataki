@@ -53,7 +53,7 @@ class BIT { public:
     } seg;
 
     int n, c_len, root[MAXN];
-    int init(int _n, int _c_len) {
+    void init(int _n, int _c_len) {
         c_len = _c_len, n = _n;
         for (int i = 1; i <= c_len; i++) root[i] = i;
         seg.tot_rt = _c_len;
@@ -63,15 +63,16 @@ class BIT { public:
     void insert(int l, int r, int c) {
         for (int i = c_len - c + 1; i <= c_len; i += lowbit(i)) seg.change(root[i], l, r, 1, 1, n);
     }
-    ll query(int l, int r, ll k) {
-        ll ans = 0, sum = 0;
+    int query(int l, int r, ll k) {
+        int ans = 0;
+        ll sum = 0;
         for (int i = log(c_len); i != 0; i >>= 1) {
             if (ans + i > c_len) continue;
             ll tmp = seg.query(root[ans + i], l, r, 1, n) + sum;
             if (tmp < k) ans += i, sum = tmp;
         }
         ans++;
-        return (ll) c_len - ans + 1ll;
+        return c_len - ans + 1;
     }
 } tree;
 
