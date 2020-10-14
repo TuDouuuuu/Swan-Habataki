@@ -8,8 +8,7 @@
   1 4 7 6 7 
   0 5         3
 */
-class LC {
-public:
+class LC {  public:
     struct LINE {
         double k, b;
     } p[MAXN];

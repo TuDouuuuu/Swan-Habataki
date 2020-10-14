@@ -67,6 +67,9 @@ namespace SAM_SEG_LCT {
         }
 
         void build() {
+            st_top = 0;
+            fa[1] = ch[1][0] = ch[1][1] = val[1] = lazy[1] = 0;
+            fa[0] = ch[0][0] = ch[0][1] = val[0] = lazy[0] = 0;
             for (int i = 2; i <= sam.rt; i++) {
                 val[i] = lazy[i] = 0;
                 ch[i][0] = ch[i][1] = 0;

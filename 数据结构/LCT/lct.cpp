@@ -9,7 +9,7 @@ class LCT { public:
     }
     inline void push_up(int x) {
         int l = ch[x][0], r = ch[x][1];
-        sum[x] = sum[l] ^ sum[r] ^ val[x];
+        sum[x] = sum[l] ^ sum[r] ^ val[x];  // 记录链上异或值
     }
     inline void push_down(int x) {
         int l = ch[x][0], r = ch[x][1];
