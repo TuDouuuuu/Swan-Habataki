@@ -1,0 +1,51 @@
+﻿public class Main {
+    public static BigInteger value0=BigInteger.valueOf(0);
+    public static BigInteger value1=BigInteger.valueOf(1);
+    public static int MAXN=100005;
+    public static void main(String args[]) {
+        Scanner cin=new Scanner(System.in);
+        int n,m;
+        n=cin.nextInt();
+        m=cin.nextInt();
+        int a[]=new int[MAXN];
+        int r[]=new int[MAXN];
+        for(int i=1;i<=n;i++) {
+            a[i]=cin.nextInt();
+            r[i]=cin.nextInt();
+        }
+        BigInteger ans=excrt(a, r, n);
+        System.out.println(ans);
+    }
+    public static BigInteger[] exgcd(BigInteger a,BigInteger b){ 
+        BigInteger ans; 
+        BigInteger[] result=new BigInteger[3]; 
+        if(b.equals(value0)){ 
+            result[0]=a;
+            result[1]=value1;
+            result[2]=value0;
+            return result;
+        }
+        BigInteger [] temp=exgcd(b,a.mod(b)); 
+        ans = temp[0]; 
+        result[0]=ans; 
+        result[1]=temp[2]; 
+        result[2]=temp[1].subtract(a.divide(b).multiply(temp[2])); 
+        return result; 
+    }
+    public static BigInteger excrt(int a[],int r[],int n){
+        BigInteger M=BigInteger.valueOf(a[1]),R=BigInteger.valueOf(r[1]);
+        BigInteger tmp[]=new BigInteger[3];
+        for(int i=2;i<=n;i++){
+            tmp=exgcd(M,BigInteger.valueOf(a[i]));
+            if(!R.subtract(BigInteger.valueOf(r[i])).mod(tmp[0]).equals(value0))return BigInteger.valueOf(-1);
+            tmp[1]=(R.subtract(BigInteger.valueOf(r[i]))).divide(tmp[0]).multiply(tmp[1]).mod(BigInteger.valueOf(a[i]));
+            R=R.subtract(M.multiply(tmp[1]));
+            M=M.divide(tmp[0]).multiply(BigInteger.valueOf(a[i]));
+            R=R.mod(M);
+        }
+        R=R.mod(M);
+        R=R.add(M);
+        R=R.mod(M);
+        return R;
+    }
+}

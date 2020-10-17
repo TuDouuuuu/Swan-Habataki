@@ -6,10 +6,7 @@
   input N = 2, L = 3, K = 1
   output [1, 2, 1]，[2, 1, 2]
 */
-
-
 vector<vector<long long>> dp;
-
 // 空间复杂度O（NL）
 int numMusicPlaylists(int N, int L, int K) {
     dp.resize(L + 1);
@@ -23,7 +20,6 @@ int numMusicPlaylists(int N, int L, int K) {
     }
     return dp[L][N];
 }
-
 // 空间复杂度O（L）
 int numMusicPlaylists(int N, int L, int K) {
     dp.resize(2);
