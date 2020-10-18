@@ -1,0 +1,25 @@
+#print怎么输出后不换行？
+print(待输出,end = '')
+#python是允许这样赋值的
+a,b,c = 1,2,3
+print(a,b,c)
+#python玩acm读取输入应该这么干
+a,b,c = input().strip().split()#其实strip()可有可无
+print(a,b,c)
+#strip('可选字符，默认为空格')的用处：去掉字符串首位连续的某字符
+#split('可选指定分隔符',可选分割次数)的用法：通过分隔符将字符串切片处理
+#注意，python的格式控制是这样的。
+print(a+b+c,a*b*c,"{:.2f}".format((a+b+c)/3))
+#也是这样的
+print("{}\n{}\n{:.6f}".format(100,'A',3.14))
+print("{:02d}:{:02d}:{:02d}".format(timeA,timeB,timeC))
+#d代表输出int，2代表输出宽度，0代表剩余位用0来填充。
+01:08:31
+#如果你想在字符串中表示\  请用"\\"  转义
+
+# input: 2(2(2+2(0))+2)+2(2(2+2(0)))+2(2(2)+2(0))+2+2(0)
+# output: 1315
+a = input()
+a = a.replace("2(", "pow(2,")
+a = int(eval(a))
+print(a)

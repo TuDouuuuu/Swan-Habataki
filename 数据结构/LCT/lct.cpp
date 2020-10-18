@@ -9,7 +9,7 @@ class LCT { public:
     }
     inline void push_up(int x) {
         int l = ch[x][0], r = ch[x][1];
-        sum[x] = sum[l] ^ sum[r] ^ val[x];
+        sum[x] = sum[l] ^ sum[r] ^ val[x];  // 记录链上异或值
     }
     inline void push_down(int x) {
         int l = ch[x][0], r = ch[x][1];
@@ -83,9 +83,14 @@ class LCT { public:
         push_up(x);
         return ;
     }
-    void change(int x, int v) {
+    void change(int x, int v) { // 修改某一点的值
         splay(x);
         val[x] = v;
         push_up(x);
+    }
+    bool isconnect(int x, int y) {  // 判断两点是否连通
+        makeroot(x);
+        if (find(y) != x) return 0; // 两条不连通
+        else return 1;
     }
 } tree;

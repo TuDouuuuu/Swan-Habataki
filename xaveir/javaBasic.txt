@@ -1,0 +1,48 @@
+﻿import java.io.*;
+import java.util.*;
+import java.math.*;
+public class Main {//大数加法
+	static Scanner cin = new Scanner(System.in);
+	static PrintWriter cout = new PrintWriter(System.out);
+	public static void main(String[] args) throws IOException {
+		BigInteger a=cin.nextBigInteger(),b...;
+		cout.println(a.multiply(b));
+		cout.flush();
+	}
+}
+public class Main {//排序
+	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in), 1 << 16);
+	static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out), 1 << 16);
+	public static void main(String[] args) throws IOException {
+		int n = Integer.parseInt(reader.readLine());
+		int[] array = new int[n];
+		for(int i = 0; i < n; i++) array[i] = Integer.parseInt(reader.readLine());
+		Arrays.sort(array);
+		for(int i = 0; i < n; i++)
+			writer.write(array[i] + "\r\n");
+		writer.flush();
+	}
+}
+public class Main {//大数开方
+	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in), 1 << 16);
+	static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out), 1 << 16);
+	public static void main(String[] args) throws Exception {
+		writer.write(BigIntSqrt(reader.readLine()) + "\r\n");
+		writer.flush();
+	}
+	public static String BigIntSqrt(String nStr) {
+		BigDecimal n = new BigDecimal(nStr);
+		BigDecimal ans = new BigDecimal(nStr.substring(0, nStr.length()/2+1));
+		BigDecimal tmp = BigDecimal.ONE;
+		BigDecimal two = new BigDecimal("2");
+		int length = 2;
+		while (true) {
+			tmp = ans.add(n.divide(ans, length, RoundingMode.HALF_DOWN));
+			tmp = tmp.divide(two, length, RoundingMode.HALF_DOWN);
+			if (tmp.subtract(ans).abs().compareTo(BigDecimal.ONE) == -1) break;
+			ans = tmp;
+		}
+		String str = ans.toString();
+		return str.substring(0, str.length() - length - 1);
+	}
+}
