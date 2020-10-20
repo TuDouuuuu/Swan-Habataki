@@ -15,3 +15,4 @@ namespace hash {
     void getHash(char str[], int len) {
         for (int i = 1; i <= len; i++) hash[i] = hash[i - 1] * seed + str[i] - 'a' + 3;
     }
+}
