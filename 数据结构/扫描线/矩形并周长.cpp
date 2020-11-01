@@ -1,3 +1,4 @@
+using namespace Discrete; // 矩形并面积中的namespace Discrete
 struct Line {
     int x, y1, y2;
     int mark;
@@ -10,7 +11,6 @@ struct Line {
         return x < tb.x;
     }
 } line[MAXN << 1];
-
 class Seg_Tree { public:
     struct SegTree {
         int l, r, sum, len, c;
@@ -61,7 +61,6 @@ class Seg_Tree { public:
         pushup(x);
     }
 }tree;
-
 int main() {
     int n; scanf("%d", &n);
     init();

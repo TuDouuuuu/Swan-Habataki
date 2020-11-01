@@ -9,7 +9,6 @@ class BIT { public:
             }
         }
     }
-
     inline int lowbit(int x) { return x & (-x); }
     void add(int x, int y, ll v) {
         for (int i = x; i <= n; i += lowbit(i)) {
@@ -18,7 +17,6 @@ class BIT { public:
             }
         }
     }
-
     inline ll query(int x, int y) {
         ll ans = 0;
         for (int i = x; i >= 1; i -= lowbit(i)) {

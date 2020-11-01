@@ -1,3 +1,14 @@
+namespace Discrete {
+    ll b[MAXN << 1];
+    int tol = 1, blen = 0;
+    inline void push(ll x) { b[tol++] = x; }
+    void init() { blen = 0; tol = 1;}
+    void build() {
+        sort(b + 1, b + tol);
+        blen = unique(b + 1, b + tol) - (b + 1);
+    }
+};
+using namespace Discrete;
 struct Line {
     ll x, y1, y2;
     int mark;

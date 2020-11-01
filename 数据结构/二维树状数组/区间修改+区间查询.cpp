@@ -11,7 +11,6 @@ class BIT { public:
             }
         }
     }
-
     inline int lowbit(int x) { return x & (-x); }
     inline void add(int x, int y, ll v) {
         for (int i = x; i <= n; i += lowbit(i)) {

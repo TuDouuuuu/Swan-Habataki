@@ -1,12 +1,3 @@
-/*
-    input   output
-    3 4     3
-    3 4
-    1 3 1
-    2 1 0
-    2 2 0
-    3 3 1
-*/
 struct Query {
     int x, y;
     Query() {}
@@ -20,7 +11,6 @@ int find(int x) {
 vector<Query> q;
 int LH[MAXN], RH[MAXN], L[MAXN], R[MAXN];
 int root[MAXN], siz[MAXN], edge[MAXN];
-
 void join(int x, int y) {
     int fx = find(x), fy = find(y);
     if (fx == fy) return;
@@ -31,7 +21,6 @@ void join(int x, int y) {
     edge[fx] += edge[fy];
     siz[fx] += siz[fy];
 }
-
 int main() {
     int T;  scanf("%d", &T);
     while (T--) {
