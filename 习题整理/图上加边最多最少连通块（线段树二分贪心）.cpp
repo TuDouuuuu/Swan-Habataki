@@ -19,7 +19,6 @@ class SEG { public:
         T[rt].edge = T[rt << 1].edge + T[rt << 1 | 1].edge;
         T[rt].sum = T[rt << 1].sum + T[rt << 1 | 1].sum;
     }
-
     void build(int rt, int l, int r) {
         T[rt].l = l, T[rt].r = r;
         if (l == r) {
