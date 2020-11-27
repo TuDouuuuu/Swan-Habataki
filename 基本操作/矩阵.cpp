@@ -10,24 +10,19 @@ ll powmod(ll a, ll b) {
     }
     return res % mod;
 }
-ll inv(ll p) {
-    return powmod(p, mod - 2);
-}
+ll inv(ll p) { return powmod(p, mod - 2); }
 ll is[N], js[N];
-class mat {
-public:
+class mat { public:
     int n,m;
     ll v[N][N];
     mat(int n,int m) : n(n), m(m){memset(v, 0, sizeof(v));}
-    void init() {   
-        memset(v, 0, sizeof(v));
-    }
+    void init() {   memset(v, 0, sizeof(v)); }
     void init1() {
         for(int i = 0; i < N; i++)
             for(int j = 0; j < N; j++)
-                v[i][j] = (i == j); //µ¥Î»¾ØÕó
+                v[i][j] = (i == j); //å•ä½çŸ©é˜µ
     }
-    mat operator * (const mat B) const {//¾ØÕó³Ë·¨ A(n,k)*B(k,m)=C(n,m);
+    mat operator * (const mat B) const {//çŸ©é˜µä¹˜æ³• A(n,k)*B(k,m)=C(n,m);
         mat C(n, B.m);
         C.init();
         for(int i = 1; i <= n; i++)
@@ -36,8 +31,7 @@ public:
             C.v[i][j] = (C.v[i][j] + v[i][k] * B.v[k][j]) % mod;//Mod
         return C;
     }
-    mat operator ^ (int t)//¾ØÕó¿ìËÙÃÝ n=mÊ±¿ÉÓÃ 
-    {
+    mat operator ^ (int t) {//çŸ©é˜µå¿«é€Ÿå¹‚ n=mæ—¶å¯ç”¨ 
         mat ans(n, n), now(n, n);
         ans.init1();
         for(int i = 1; i <= n; i++)
@@ -50,7 +44,7 @@ public:
         }
         return ans;
     }
-    void change() { // ×ªÖÃ 
+    void change() { // è½¬ç½® 
     	swap(n, m);
 		for(int i = 1; i <= max(n, m); i++) {
 			for(int j = i + 1; j <= max(n, m); j++) {
@@ -58,19 +52,16 @@ public:
 			}
 		} 
 	} 
-	void Minv() {  // Äæ¾ØÕó 
+	void Minv() {  // é€†çŸ©é˜µ 
 		for(int k = 1; k <= n; k++) {
 	        for(int i = k; i <= n; i++) // 1
 	            for(int j = k; j <= n; j++)
 	                if(v[i][j]) {
-	                    is[k] = i;
-	                    js[k] = j;
+	                    is[k] = i, js[k] = j;
 	                    break;
 	                }
-	        for(int i = 1; i <= n; i++) // 2
-	            swap(v[k][i], v[is[k]][i]);
-	        for(int i = 1; i <= n; i++)
-	            swap(v[i][k], v[i][js[k]]);
+	        for(int i = 1; i <= n; i++) swap(v[k][i], v[is[k]][i]); // 2
+	        for(int i = 1; i <= n; i++) swap(v[i][k], v[i][js[k]]);
 	        v[k][k] = inv(v[k][k]); // 3
 	        for(int j = 1; j <= n; j++)
 	            if(j != k) // 4
