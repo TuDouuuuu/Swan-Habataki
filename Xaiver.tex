@@ -1,0 +1,197 @@
+%==============================常用宏包、环境==============================%
+\documentclass[landscape,twocolumn,a4paper]{article}
+\usepackage{xeCJK} % For Chinese characters
+\usepackage{amsmath, amsthm}
+\usepackage{listings,xcolor}
+\usepackage{geometry} % 设置页边距
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{fancyhdr} % 自定义页眉页脚
+\usepackage[breaklinks,colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\setsansfont{Consolas} % 设置英文字体
+\setmonofont[Mapping={}]{Consolas} % 英文引号之类的正常显示，相当于设置英文字体
+\geometry{left=1cm,right=1cm,top=2cm,bottom=0.5cm} % 页边距
+\setlength{\columnsep}{30pt}
+% \setlength\columnseprule{0.4pt} % 分割线
+
+\usepackage{xunicode, xltxtra} 
+\setmainfont{Microsoft YaHei} 
+\usepackage{setspace}
+\usepackage{ctex} 
+\usepackage[Glenn]{fncychap}
+\usepackage{color}
+\usepackage{verbatim}
+
+
+
+%==============================常用宏包、环境==============================%
+\newfontfamily\monaco{Monaco}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+%==============================页眉、页脚、代码格式设置==============================%
+% 页眉、页脚设置
+\pagestyle{fancy}
+% \lhead{CUMTB}
+\lhead{\CJKfamily{hei} Standard Code Library}
+\chead{}
+% \rhead{Page \thepage}
+\rhead{\CJKfamily{hei} 第 \thepage 页}
+\lfoot{} 
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+% 代码格式设置
+% \lstset{
+%     frame=simple,
+%     language=c++,
+%     aboveskip=3mm,
+%     belowskip=3mm,
+%     showstringspaces=false,
+%     basicstyle=\monaco,
+%     numbers=none,
+%     numberstyle=\tiny\color{gray},
+%     keywordstyle=\bfseries\monaco,%\fontspec{monaco Bold}\bfseries,
+%     commentstyle=\color{dkgreen},
+%     stringstyle=\color{mauve},
+%     breaklines=true,
+%     breakatwhitespace=true,
+%     tabsize=4,
+%     numbers = left,
+% }
+
+\lstset{
+    language    = c++,
+    numbers     = left,
+    numberstyle = \tiny,
+    breaklines  = true,
+    captionpos  = b,
+    tabsize     = 4,
+    frame       = simple,
+    columns     = fullflexible,
+    commentstyle = \color[RGB]{0,128,0},
+    keywordstyle = \color[RGB]{0,0,255},
+    basicstyle   = \monaco,
+    stringstyle  = \color[RGB]{148,0,209}\ttfamily,
+    rulesepcolor = \color{red!20!green!20!blue!20},
+    showstringspaces = false,
+}
+%==============================页眉、页脚、代码格式设置==============================%
+
+%==============================标题和目录==============================%
+\title{\CJKfamily{hei} \bfseries Standard Code Library}
+\author{Xavier\_Cai}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\begin{document}\small
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\newpage
+\pagestyle{empty}
+\renewcommand{\contentsname}{目录}
+\tableofcontents
+\newpage\clearpage
+\newpage
+\pagestyle{fancy}
+\setcounter{page}{1}   %new page
+%==============================标题和目录==============================%
+%==============================正文部分==============================%
+%\begin{lstlisting}
+%\end{lstlisting}
+%\lstinputlisting{code/sieve.txt}
+%==============================数据结构==============================%
+\section{数据结构}
+
+\subsection{LCT}
+\subsubsection{lct}
+\lstinputlisting{数据结构/LCT/lct.cpp}
+\subsubsection{树上路径染色}
+\lstinputlisting{数据结构/LCT/树上路径染色（[SDOI2011]染色）.cpp}
+\subsubsection{离线统计区间本质不同字串个数}
+时间复杂度：$O(n \log^{2}n + m \log n)$.
+\lstinputlisting{数据结构/LCT/SAM+线段树+LCT离线统计区间本质不同字串个数.cpp}
+\subsubsection{在线查询边的区间内连通块个数}
+时间复杂度：$O(m \log n + q \log m)$.
+\lstinputlisting{数据结构/LCT/主席树+LCT在线查询区间连通块个数.cpp}
+
+\subsection{有旋Treap \&无旋Treap}
+\subsubsection{带跳fa的Treap（[ZJOI2006]书架）}
+\lstinputlisting{数据结构/无旋Treap/带跳fa的Treap（[ZJOI2006]书架）.cpp}
+\subsubsection{并查集+启发式合并（HDU3726）}
+\lstinputlisting{数据结构/有旋Treap/并查集+启发式合并（HDU3726）.cpp}
+
+\subsection{李超线段树}
+\subsubsection{多条线段定点最值（[HEOI2013]Segment）}
+要求在平面直角坐标系下维护两个操作（强制在线）：\par
+\textbf{1 x0 y0 x1 y1} 在平面上加入一条线段。\par
+\textbf{0 x} 给定一个数，询问与直线$y=x$相交的线段中，交点纵坐标最大的线段的编号（若有多条线段与查询直线的交点纵坐标都是最大的，则输出编号最小的线段）。特别地，若不存在线段与给定直线相交，输出0。
+\lstinputlisting{数据结构/李超线段树/函数定点最值（[HEOI2013]Segment）.cpp}
+
+\subsection{YNOI系列}
+\subsubsection{带修查询能否连续重排为值域连续的序列（线段树+散列异或）（洛谷P3792）}
+\textbf{1 x y} 修改$x$位置的值为$y$\par
+\textbf{2 l r} 查询区间$[l,r]$是否可以重排为值域上连续的一段\par
+\lstinputlisting {数据结构/YNOI系列/带修查询能否连续重排为值域连续的序列（线段树+散列异或）（洛谷P3792）.cpp}
+
+%==============================字符串==============================%
+% \newpage\clearpage
+% \newpage
+
+\section{字符串}
+
+\subsection{后缀连接字典序最小}
+\lstinputlisting{字符串/后缀数组/习题整理/后缀连接字典序最小(arc050_d).cpp}
+
+%==============================动态规划==============================%
+
+\section{动态规划}
+
+\subsection{\#2 字符串T在字符串S子序列出现的次数}
+\lstinputlisting{动态规划/2_字符串T在字符串S子序列出现的次数.cpp}
+\subsection{\#3 N种长度为1元素填充L}
+\lstinputlisting{动态规划/3_N种长度为1元素填充L.cpp}
+\subsection{\#4 分割数组}
+\lstinputlisting{动态规划/4_分割数组.cpp}
+\subsection{\#5 划分为K个相等的子集}
+\lstinputlisting{动态规划/5_划分为K个相等的子集.cpp}
+
+%==============================杂项==============================%
+
+\section{杂项}
+\subsection{散列处理异或碰撞}
+常用于处理判断出现偶数次（HDU6291），重排后为值域上的连续一段（洛谷P3792、YNOI）。
+\lstinputlisting{其它/散列处理异或碰撞.cpp}
+
+\subsection{fread}
+\lstinputlisting{杂项/fread.cpp}
+
+%==============================习题整理==============================%
+
+\section{习题整理}
+\subsection{图上加边最多最少连通块（线段树二分贪心）（ZOJ4100）}
+时间复杂度：$O(q \log ^ {2} n)$.
+\lstinputlisting{习题整理/图上加边最多最少连通块（线段树二分贪心）.cpp}
+\subsection{错排后字典序最小（ZOJ4102）}
+时间复杂度：$O(n \log n)$.
+\lstinputlisting{习题整理/错排后字典序最小（ZOJ4102）.cpp}
+\subsection{若干个区间选数字使相与之和最小（ZOJ4135）}
+\lstinputlisting{习题整理/若干个区间选数字使相与之和最小（ZOJ4135）.cpp}
+\subsection{2019徐州L}
+给一颗字符串树，1为根，求从哪个结点向上L长度的字符串共有多少种本质不同的字符串
+\lstinputlisting{习题整理/2019徐州L.cpp}
+
+%==============================习题整理==============================%
+\section{Java \& Python}
+eclipse下ALT+/，自动补全代码。
+\subsection{Java}
+\lstinputlisting[language=java]{xaveir/javaBasic.txt}
+\lstinputlisting[language=java]{xaveir/javaExcrt.txt}
+\subsection{Python}
+\lstinputlisting[language=python]{xaveir/python.txt}
+
+\end{document}
