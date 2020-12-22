@@ -1,5 +1,5 @@
 %==============================常用宏包、环境==============================%
-\documentclass[landscape,twocolumn,twoside,a4paper]{article}
+\documentclass[landscape,twoside,a4paper]{article}
 \usepackage{xeCJK} % For Chinese characters
 \usepackage{amsmath, amsthm}
 \usepackage{listings,xcolor}
@@ -24,7 +24,7 @@
 \usepackage{verbatim}
 \usepackage{titlesec}
 \usepackage{markdown}
-
+ 
 
 %==============================常用宏包、环境==============================%
 \newfontfamily\monaco{Monaco}
@@ -173,8 +173,8 @@ $\left\{\begin{matrix} x \equiv a_{1} (\mod m_{1})\\ x \equiv a_{2} (\mod m_{2})
 \subsection{字符串哈希}
 \subsubsection{区间一维哈希}
 \lstinputlisting{字符串/Hash/Hash.cpp}
-% \subsubsection{二维哈希}
-% \lstinputlisting{}
+\subsubsection{二维哈希}
+\lstinputlisting{字符串/Hash/二维Hash.cpp}
 
 
 
@@ -294,7 +294,7 @@ $extend$数组：串$b$与串$a$的每一个后缀的$LCP$长度。
 
 
 \subsection{Manacher}
-\subsubsection{字符串/带条件的马拉车.cpp}
+\lstinputlisting{字符串/带条件的马拉车.cpp}
 
 \subsection{回文自动机PAM}
 \lstinputlisting{字符串/回文自动机/回文自动机PAM.cpp}
@@ -740,6 +740,85 @@ $0$代表没有水，$1$代表有水\par
 \subsection{2019徐州L}
 给一颗字符串树，1为根，求从哪个结点向上L长度的字符串共有多少种本质不同的字符串
 \lstinputlisting{习题整理/2019徐州L.cpp}
+
+\subsection{双哈希（2019CCPC哈尔滨L）}
+给定一个$n$个数的数字序列，第$i$个数为$a[i]$，每次操作会将$a[i]$插入或移到最前端：\par
+1.若$a[i]$已经在序列中出现过，则将其移到最前端，并删除原出现位置\par
+2.若$a[i]$未出现过，则直接将其插入到最前端\par
+\lstinputlisting{习题整理/双哈希（2019CCPC哈尔滨L）.cpp}
+
+
+\subsection{双哈希（2019CCPC哈尔滨L）}
+给定$n$个数的序列，对于每一个$m$，求最短的涵盖从$1$到$i$的线段的长度。\par
+$R_{i,l}$代表以$l$为线段左端点，包含数从$1$~$i$中所有数字的最近右端点。\par
+对于$i+1$来说，其所在的位置为$p_{1},p_{2},p_{3},...,p_{k}$。这些数将长度为$n$的区间划分为若干部分，如下所示：\par
+[1, $p_{1}$]，[$p_{1}+1$, $p_{2}$]，...，[$p_{k}+1$,$n$]
+对于每一个区间，其内部所有的 $l$ 在从 $R_{i,l}$ 转移至 $R_{i+1,l}$ 时，式子为$R_{i+1,l}$ = $max(R_{i,l}, \ p_{k})$\par
+其中，$p_{k}$代表其所在区间的右端点。\par
+特别的，当所在的 $l$ 位于最后一个线段中，不可能构成包含数从 $1$~$i$ 中所有数字的线段，此时应将 $R_{i+1,l}$ 置为无穷大，也就是取不到\par
+显然在任何情况下 $R_{i,l}$ 是**单调递增**的。最后，将问题转移成了对于每一个区间，找到 $R_{i,l} < p_{k}$ 的一段数并将其值赋为 $p_{k}$ 。这个操作可以利用线段树进行维护。
+\lstinputlisting{习题整理/最短的涵盖从1到i的线段（线段树）.cpp}
+
+\subsection{二分线段树DP（成电多校HDU6606）}
+给定 $n$ 个数，在不改变数的排序状态的情况下，取前 $x$ 个数，将这 $x$个数分为 $k$ 段，要求每段的和的最大值最小，问这个值是多少。\par
+考虑对二分后的值进行check，需要在二分后中的check中进行DP操作。\par
+题解给出了一个DP转移式子：$dp[i] = max(dp[j]) + 1$ ，其中 $dp[j]$ 要求满足：$sum[i] - sum[j] \leq x$ （ $sum[i]$ 代表第$i$位的前缀和，$x$ 为枚举的 $mid$ ）并且 $i \leq j$ 。\par
+将 $sum[i] - sum[j] \leqslant x$ 转化 $sum[j] \geqslant sum[i] - x$ 。\par
+将 $sum[i]$ 离散化后作为线段树下标进行维护，维护的值为 $dp[i]$ 。那么就是在区间 $[val2id(sum[i] - x), m]$ 中找到最大的值，其中 $val2id(sum[i] - x)$ 是离散化后的 $sum[i] - x$ 的值，$m$ 为离散化后的数字数目。
+\lstinputlisting{习题整理/二分线段树DP（成电多校HDU6606）.cpp}
+
+\subsection{二分线段树DP（成电多校HDU6606）}
+给出 $n$ 个操作，只含有 $+$， $*$， $^$ 计算。有两种操作：\par
+1. 询问一个数 $x$，将这个 $x$ 把所有给出需要的计算式来计算一遍。\par
+2. 将其中某一步计算修改。\par
+\lstinputlisting{习题整理/CRT+线段树乱搞（HDU5238）.cpp}
+
+\subsection{曼哈顿距离转切比雪夫距离+大力分类讨论线段树（2018ICPC沈阳E）}
+在无限宽广的二维平面上，分布着 $n$ 个忍者，他们各自的派别，有 $m$ 个操作，共 $3$ 种：\par
+1. 将编号为 $k$ 的忍者的位置变为 $(x'+x, y'+y)$。\par
+2. 将编号为 $k$ 的忍者的派别变为 $c$。\par
+3. 询问编号在 $[l,r]$ 之间的忍者中，派别不同的最大的曼哈顿距离。\par
+\lstinputlisting{习题整理/曼哈顿距离转切比雪夫距离+大力分类讨论线段树（2018ICPC沈阳E）.cpp}
+
+\subsection{只选一个区间听课（CF1452E）}
+给定 $m$ 个人，他们感兴趣的区间在 $[1,n]$ 的区间内，有两个老师进行授课，老师们的授课区间长度为 $k$，每个人只能听一个老师授课，求所有人听到课的长度总和最大。\par
+对于一个老师和一个同学，当老师区间从左向右移动时，同学能听到的课的长度为0->最大->0，因此贪心地想能够在中点处达到最大。\par
+对每个同学的中点位置进行排序，将中点位置小的排在前面，重点位置大的排在后面，从后往前扫，每次记录 $[j,m]$ 位同学能够达到的和的最大值，用这个作为第二个老师授课的根据。\par
+再枚举第一个老师的授课位置，枚举听第一个老师授课的同学数量，再加上之前记录的听第二个授课老师的 $[j,m]$ 位同学能够达到的和的最大值，求最大值。\par
+\lstinputlisting{习题整理/只选一个区间听课（CF1452E）.cpp}
+
+\subsection{图上倍增+后缀数组（2017ICPC沈阳）}
+给定一张图有 $N$ 个点，编号为 $0,...,N-1$，每个点都从自身有一条到点 $i^{2}+1$ 的边（有向），点上有点权，点权为 $0,...,9$，走过一条路径最终获得的字符串为点权字符串拼起来。问走 $N$ 步，能得到的最大字符串为多少。
+\lstinputlisting{习题整理/图上倍增+后缀数组（2017ICPC沈阳）.cpp}
+
+\subsection{寻找一个半字串\_式子转换+马拉车+主席树（2017CCPC哈尔滨A）}
+1234543212345 是按照5和1对称的，那么在保证5和1是回文串的状态下，要能够之间相互覆盖。\par
+设5的位置为 $i$，1的位置为 $j$, 要求 $i \leq j$，则可得公式\par
+$
+\left\{\begin{matrix}
+j-i \leq len[i] \\
+j-i \leq len[j] \\
+\end{matrix}\right.
+$\par
+移动式子，可得\par
+$
+\left\{\begin{matrix}
+j \leq i+len[i] \\
+j-len[j] \leq i \\
+\end{matrix}\right.
+$\par
+将其转化为区间 $[i+1, i+len[i]]$ 内求有多少个数，使得 $j-len[j] \leq i$。
+\lstinputlisting{习题整理/式子转换+马拉车+主席树（2017CCPC哈尔滨A）.cpp}
+
+\subsection{区间子集和的MEX}
+给定一个序列，有以下几种操作：\par
+1. 将第 $x$ 位置的数修改为 $y$。\par
+2. 询问区间 $[L, R]$，问其子集之和的 MEX。\par
+首先有一个性质：先看看是否存在 $1$。若没有 $1$，则表明必然无法凑出 $1$，那么答案就是 $1$。\par
+然后假设上一次求出来的和的值为 $x$，表明 $[1,x]$ 都可以通过子集表示出来。再求 $[1,x+1]$ 的和，若和 $[1,x]$ 求和的值相等，则表示 $x+1$ 不能被表示。\par
+最坏情况为斐波那契数列。
+\lstinputlisting{习题整理/区间子集和的MEX.cpp}
+
 
 %==============================st1vdy计算几何==============================%
 \section{st1vdy计算几何}
