@@ -1,6 +1,5 @@
 //---------------data.cpp----------------
-int main()
-{
+int main() {
     freopen("in","w",stdout);
     srand(time(0));
     int n,m,q;
@@ -18,8 +17,7 @@ int main()
 }
 
 //----------------1.cpp&&2.cpp-----------------------
-int main()
-{
+int main() {
     freopen("in","r",stdin);
     freopen("1.out","w",stdout);
     //freopen("2.out","w",stdout);
@@ -27,8 +25,7 @@ int main()
 }
 
 //----------------duipai.cpp-------------------------
-int main()//Windows
-{
+int main() {//Windows
     int cases = 0;
     do{
         if(cases) printf("#%d AC\n",cases);
@@ -40,21 +37,19 @@ int main()//Windows
     printf("#%d WA",cases);
     return 0;
 }
-int main()//Linux
-{
+int main() {//Linux
     int i;
-    for (i=1;i<=1000;i++)
-        {
-            system("./data");
-            system("./1");
-            system("./2");
-            printf("%d : ",i);
-            if (system("diff 1.out 2.out"))
-                {
-                    printf("WA\n");
-                    return 0;
-                }
-            else printf("AC\n");
-        }
+    for (i=1;i<=1000;i++) {
+        system("./data");
+        system("./1");
+        system("./2");
+        printf("%d : ",i);
+        if (system("diff 1.out 2.out"))
+            {
+                printf("WA\n");
+                return 0;
+            }
+        else printf("AC\n");
+    }
     return 0;
 }
