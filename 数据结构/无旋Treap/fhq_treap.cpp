@@ -29,6 +29,18 @@ class Treap { public:
         return newnode;
     }
 
+    // 在外面
+    if (fl[rt]) {
+        if (ch[rt][0]) swap(ch[ch[rt][0]][0], ch[ch[rt][0]][1]), fl[rt] ^= 1;
+        if (ch[rt][1]) swap(ch[ch[rt][1]][0], ch[ch[rt][1]][1]), fl[rt] ^= 1;
+        fl[rt] = 0;
+    }
+    // lazy的打标记与线段树类似,在外面 val +=, lazy += ,再向下推(POJ3580)
+    if (lazy[rt]) {
+        if ()
+        if ()
+        lazy[rt] = 0;
+    }
     inline void push_down(int rt) {
         if (fl[rt]) {
             swap(ch[rt][0], ch[rt][1]);
@@ -36,7 +48,10 @@ class Treap { public:
             if (ch[rt][1]) fl[ch[rt][1]] ^= 1;
             fl[rt] = 0;
         }
+        
     }
+    
+
 
     void split(int rt, int k, int &x, int &y) { // 按照编号进行分裂
         if (!rt) x = y = 0;
@@ -48,6 +63,20 @@ class Treap { public:
             } else {
                 x = rt;
                 split(ch[rt][1], k - siz[ch[rt][0]] - 1, ch[rt][1], y);
+            }
+            push_up(rt);
+        }
+    }
+
+    void split(int rt, int v, int &x, int &y) { // 按权值进行分裂
+        if (!rt) x = y = 0;
+        else {
+            if (val[rt] <= v) {
+                x = rt;
+                split(ch[rt][1], v, ch[rt][1], y);
+            } else {
+                y = rt;
+                split(ch[rt][0], v, x, ch[rt][0]);
             }
             push_up(rt);
         }

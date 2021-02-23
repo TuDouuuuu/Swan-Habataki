@@ -7,7 +7,7 @@
     0 1 2 2     4
     1 1 2 4
 */
-ll a[MAXN], b[MAXN], sum[MAXN];
+ll a[MAXN], b[sqrt(MAXN)], sum[sqrt(MAXN)];
 int bl[MAXN], unit;
 void add(int l, int r, ll c) {
     int sid = bl[l], eid = bl[r];
@@ -32,8 +32,7 @@ ll query(int l, int r, ll mod) {
     return ans;
 }
 int main() {
-    int n;
-    scanf("%d", &n);
+    int n; scanf("%d", &n);
     unit = sqrt(n);
     for (int i = 1; i <= n; i++) {
         scanf("%lld", &a[i]);
@@ -41,8 +40,7 @@ int main() {
         sum[bl[i]] += a[i];
     }
     for (int i = 1; i <= n; i++) {
-        int opt, l, r; ll c;
-        scanf("%d%d%d%lld", &opt, &l, &r, &c);
+        int opt, l, r; ll c; scanf("%d%d%d%lld", &opt, &l, &r, &c);
         if (opt == 0) add(l, r, c); // [l, r] 的数+c
         else printf("%lld\n", query(l, r, c + 1));  // sum[l, r] % (c + 1)
     }

@@ -43,6 +43,7 @@ int LCA(int u, int v) {
 int main() {
     int n, m; scanf("%d%d", &n, &m);
     init(n);
+    memset(fa, 0, sizeof(fa)); // for (int i = 1; i <= n; i++) memset(fa[i], 0, sizeof(fa[i]));
     for (int i = 1; i <= n; i++) head[i] = -1;
     for (int i = 1; i <= n; i++) scanf("%d", &val[i]);
 

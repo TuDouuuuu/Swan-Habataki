@@ -2,15 +2,12 @@ const ull base1 = 19260817;
 const ull base2 = 233;
 const int MAXN = 1005;
 ull b1[MAXN], b2[MAXN];
-
 void init() {
     b1[0] = 1, b2[0] = 1;
     for (int i = 1; i < MAXN; i++) b1[i] = b1[i - 1] * base1;
     for (int i = 1; i < MAXN; i++) b2[i] = b2[i - 1] * base2;
 }
-
 char pat[55][55];
-
 ull get_hash1(int p, int q) {
     ull ans = 0;
     for (int i = 1; i <= p; i++) {
@@ -22,7 +19,6 @@ ull get_hash1(int p, int q) {
     }
     return ans;
 }
-
 
 char str[MAXN][MAXN];
 ull Hash[2][MAXN][MAXN];

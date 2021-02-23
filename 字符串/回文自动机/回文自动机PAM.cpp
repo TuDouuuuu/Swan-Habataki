@@ -30,7 +30,7 @@ class Palindrome_Tree { public:
                 T[tol].num = T[T[tol].fail].num + 1;
                 T[p].ch[c[i]] = tot;
             }
-            las = T[p].ch[c[i]];
+            las = T[p].ch[c[i]];    // 一般是对las指向进行操作和计数
             pos[i] = las;
         }
     }

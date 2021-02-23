@@ -4,10 +4,10 @@
 	rank	Suffix			pos(sa)		index
 	1 		aaaab 			8			1
 	2	 	aaab 			9			2
-	3 		aaabaabaaab 	1			3
+	3 		aaabaabaaaab 	1			3
 	4 		aab 			10			4
 	5 		aabaaaab 		5			5
-	6 		aabaabaaab 		2			6
+	6 		aabaabaaaab		2			6
 	7 		ab 				11			7
 	8 		abaaaab 		6			8
 	9 		abaabaaaab 		3			9
@@ -27,6 +27,7 @@ namespace SA {	// private ver.
         for (int i = 1; i <= len; i++) ++cnt[rk[i] = s[i]];
         for (int i = 1; i <= m; i++) cnt[i] += cnt[i - 1];
         for (int i = len; i >= 1; i--) sa[cnt[rk[i]]--] = i;
+        for (int i = len+1; i <= (len<<1); i++) oldrk[i] = rk[i] = 0;
 
         for (int w = 1; w <= len; w <<= 1) {
             // memset(cnt, 0, sizeof(cnt));

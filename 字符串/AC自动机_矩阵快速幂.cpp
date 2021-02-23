@@ -65,7 +65,6 @@ int main() {
         while (m--) {
             scanf("%s", str + 1);
             ac.insert(str, strlen(str + 1));
-
         }
         ac.build();
         mat ma(ac.top, ac.top);

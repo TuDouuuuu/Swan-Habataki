@@ -1,3 +1,16 @@
+/*  [input]             [output]
+    5 5
+    50 20 10 10 30      2
+    1 1 2               2
+    2 0 5               0
+    2 0 -10             0
+    1 0 10              0
+    20 2                1
+    10 3                1
+    40 4                3
+    20 4                1
+    35 5                1
+*/
 #define pii pair<int , ll>
 class LT {  public:
     int pool[MAXN], pool_cnt;

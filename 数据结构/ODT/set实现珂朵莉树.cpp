@@ -32,17 +32,17 @@ public:
         return st.insert(node(pos, ur, uv)).first;
     }
     void add(int l, int r, ll v = 1) {  // 对一段区间加上一个数
-        IT itl = split(l), itr = split(r + 1);
+        IT itr = split(r + 1), itl = split(l); // 一定要先split右再split左！
         for (; itl != itr; itl++) itl->val += v;
     }
     void assign_val(int l, int r, ll v = 0) {   // 对一段区间进行赋值
-        IT itl = split(l), itr = split(r + 1);
+        IT itr = split(r + 1), itl = split(l); // 一定要先split右再split左！
         st.erase(itl, itr);
         st.insert(node(l, r, v));
     }
     ll rank(int l, int r, int k) {
         vector<pair<ll, int>> vp;
-        IT itl = split(l), itr = split(r + 1);
+        IT itr = split(r + 1), itl = split(l); // 一定要先split右再split左！
         vp.clear();
         for (; itl != itr; itl++)
             vp.push_back(pair<ll, int>(itl->val, (itl->r) - (itl->l) + 1));
@@ -54,7 +54,7 @@ public:
         return -1ll;
     }
     ll sum(int l, int r, int times, int mod) {
-        IT itl = split(l), itr = split(r + 1);
+        IT itr = split(r + 1), itl = split(l); // 一定要先split右再split左！
         ll ans = 0;
         for (; itl != itr; itl++)
             ans = (ans + (ll) (itl->r - itl->l + 1) * powmod(itl->val, (ll) times, (ll) mod) % mod) % mod;

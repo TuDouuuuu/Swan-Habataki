@@ -3,7 +3,6 @@ class SEG { public:
         int l, r;
         int len[2], pre[2], suf[2];
     } T[MAXN << 2];
-
     inline void push_up(int rt) {
         for (int i = 0; i < 2; i++) {
             T[rt].pre[i] = T[rt << 1].pre[i];
@@ -27,7 +26,6 @@ class SEG { public:
             }
         }
     }
-
     void build(int rt, int l, int r) {
         T[rt].l = l, T[rt].r = r;
         if (l == r) {
@@ -40,7 +38,6 @@ class SEG { public:
         build(rt << 1, l, mid), build(rt << 1 | 1, mid + 1, r);
         push_up(rt);
     }
-
     void study(int rt, int L, int R) {
         if (L <= T[rt].l && T[rt].r <= R) {
             for (int i = 0; i < 2; i++) {
@@ -54,7 +51,6 @@ class SEG { public:
         if (R > mid) study(rt << 1 | 1, L, R);
         push_up(rt);
     }
-
     void play(int rt, int L, int R, int op) {
         if (L <= T[rt].l && T[rt].r <= R) {
             T[rt].len[op] = T[rt].pre[op] = T[rt].suf[op] = 0;
@@ -66,7 +62,6 @@ class SEG { public:
         if (R > mid) play(rt << 1 | 1, L, R, op);
         push_up(rt);
     }
-
     int query(int rt, int v, int op) {
         if (T[rt].l == T[rt].r) return T[rt].l;
         push_down(rt);
@@ -79,9 +74,7 @@ class SEG { public:
             ans = query(rt << 1 | 1, v, op);
         return ans;
     }
-
 } tree;
-
 
 int main() {
     int T; scanf("%d", &T);
