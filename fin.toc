@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}数据结构}{1}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}单调栈}{1}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}单调队列}{1}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}线段树套平衡树}{1}{subsection.1.3}% 
+\contentsline {section}{\numberline {2}图论}{4}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}点分治}{4}{subsection.2.1}% 
+\contentsline {subsubsection}{\numberline {2.1.1}两点间的距离是否为3的倍数（[国家集训队]聪聪可可）}{4}{subsubsection.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.1.2}询问树上距离为k的点对是否存在}{6}{subsubsection.2.1.2}% 
+\contentsline {subsubsection}{\numberline {2.1.3}两点间距离不超过l距离权重和不超过w}{8}{subsubsection.2.1.3}% 
+\contentsline {subsection}{\numberline {2.2}DSU}{10}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}询问子树颜色种类数}{10}{subsubsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.3}无向图相邻边成对}{11}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}BFS TREE(CF1496F)}{12}{subsection.2.4}% 
+\contentsline {section}{\numberline {3}整体二分}{13}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}每次询问一个子矩阵的第 $k$ 小数}{13}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}带修主席树}{15}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}在右半边的整体二分}{17}{subsection.3.3}% 
+\contentsline {section}{\numberline {4}计算几何}{19}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}凸包}{19}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}四边形}{20}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}四边形计数}{20}{subsubsection.4.2.1}% 
+\contentsline {subsubsection}{\numberline {4.2.2}四边形最小面积计数}{21}{subsubsection.4.2.2}% 
+\contentsline {section}{\numberline {5}习题整理}{23}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}dfs+2019银川A}{23}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}链哈LCA倍增}{24}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}后缀自动机+set}{27}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}CF840D Destiny}{28}{subsection.5.4}% 
