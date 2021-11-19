@@ -1,0 +1,137 @@
+%==============================常用宏包、环境==============================%
+\documentclass[twoside,a4paper]{article}
+\usepackage{xeCJK} % For Chinese characters
+\usepackage{amsmath, amsthm}
+\usepackage{listings,xcolor}
+\usepackage{geometry} % 设置页边距
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{fancyhdr} % 自定义页眉页脚
+\usepackage{makecell}
+\usepackage[breaklinks,colorlinks,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\setsansfont{Consolas} % 设置英文字体
+\setmonofont[Mapping={}]{Consolas} % 英文引号之类的正常显示，相当于设置英文字体
+\geometry{left=1.8cm,right=1cm,top=1.5cm,bottom=0.5cm} % 页边距
+% \setlength{\columnsep}{15pt}
+% \setlength\columnseprule{0.4pt} % 分割线
+
+\usepackage{xunicode, xltxtra} 
+\setmainfont{Microsoft YaHei} 
+\usepackage{setspace}
+\usepackage{ctex} 
+\usepackage[Glenn]{fncychap}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{titlesec}
+\usepackage{markdown}
+ 
+
+%==============================常用宏包、环境==============================%
+\newfontfamily\monaco{Monaco}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+%==============================页眉、页脚、代码格式设置==============================%
+% 页眉、页脚设置
+
+\pagestyle{fancy}
+\fancyhead{} %clear all fields
+\fancyhead[RO]{\CJKfamily{hei} 第 \thepage 页} %奇数页眉的右边
+\fancyhead[LE]{\CJKfamily{hei} 第 \thepage 页} %奇数页眉的右边
+% \lhead{CUMTB}
+% \lhead{\CJKfamily{hei} Standard Code Library}
+% \chead{}
+% \rhead{Page \thepage}
+% \rhead{\CJKfamily{hei} 第 \thepage 页}
+% \lfoot{} 
+% \cfoot{}
+% \rfoot{\CJKfamily{hei} 第 \thepage 页}
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+% \lstset{
+%     language    = c++,
+%     numbers     = left,
+%     numberstyle = \tiny,
+%     breaklines  = true,
+%     captionpos  = b,
+%     tabsize     = 4,
+%     frame       = simple,
+%     columns     = fullflexible,
+%     commentstyle = \color{gray},
+%     keywordstyle = \bfseries\monaco,
+%     basicstyle   = \monaco,
+%     stringstyle  = \color[RGB]{148,0,209}\ttfamily,
+%     rulesepcolor = \color{red!20!green!20!blue!20},
+%     showstringspaces = false,
+% }
+
+\lstset{
+    frame = simple,
+    language = c++,
+    aboveskip = 3mm,
+    belowskip = 3mm,
+    showstringspaces = false,
+    basicstyle = \monaco,
+    numbers = left,
+    numberstyle = \tiny\color{gray},
+    keywordstyle = \bfseries\monaco,%\fontspec{monaco Bold}\bfseries,
+    commentstyle = \color{gray},
+    stringstyle = \color{mauve},
+    breaklines = true,
+    breakatwhitespace = true,
+    tabsize = 4
+}
+
+%==============================页眉、页脚、代码格式设置==============================%
+
+%==============================标题和目录==============================%
+% \title{\CJKfamily{hei} \bfseries Standard Code Library}
+% \author{Xavier\_Cai}
+% \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\begin{document}\small
+% \begin{titlepage}
+% \maketitle
+% \end{titlepage}
+
+\newpage
+\pagestyle{empty}
+\renewcommand{\contentsname}{目录}
+\tableofcontents
+\newpage\clearpage
+\newpage
+\pagestyle{fancy}
+\setcounter{page}{1}   %new page
+
+%==============================基本操作=============================%
+\section{FFT+NTT}
+
+\subsection{FFT}
+\lstinputlisting{yx数论/FFT.cpp}
+
+\subsection{NTT}
+
+
+%=============================计算几何==============================%
+\section{计算几何}
+
+\subsection{长方体在三维空间中运动离目标点最近距离（2017ICPC青岛H）}
+\lstinputlisting{yx计算几何/长方体在空间中运动离目标点最近距离（2017ICPC青岛H）.cpp}
+
+\subsection{最小球覆盖（模拟退火）}
+\lstinputlisting{yx计算几何/最小球覆盖.cpp}
+
+\subsection{求n个点的带权类费马点（模拟退火）}
+\lstinputlisting{yx计算几何/求n个点的带权类费马点.cpp}
+
+
+%==============================st1vdy计算几何==============================%
+\section{他人计算几何}
+\subsection{st1vdy}
+\lstinputlisting{st1vdy.cpp}
+\subsection{forever97}
+\lstinputlisting{forver97.cpp}
+
+\end{document}

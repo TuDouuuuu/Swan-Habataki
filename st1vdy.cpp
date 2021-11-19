@@ -13,7 +13,6 @@ namespace geometry {
     int inmid(db k1, db k2, db k3) { // k3 在 [k1, k2] 内
         return sign(k1 - k3) * sign(k2 - k3) <= 0;
     }
-
     struct point { // 点类
         db x, y;
         point() {}
@@ -104,7 +103,6 @@ namespace geometry {
             return compareAngle(k1 - t, k2 - t);
             });
     }
-
     struct line { // 直线 / 线段类
         point p[2];
         line() {}
@@ -122,7 +120,6 @@ namespace geometry {
             return line(p[0] - delta, p[1] - delta);
         }
     };
-
     bool parallel(line k1, line k2) { // 判断是否平行
         return sign(cross(k1.dir(), k2.dir())) == 0;
     }
@@ -142,7 +139,6 @@ namespace geometry {
     bool checkpos(line k1, line k2, line k3) {  // 判断是否三线共点
         return k3.include(getLL(k1, k2));
     }
-
     struct circle { // 圆类
         point o;
         double r;
@@ -152,7 +148,6 @@ namespace geometry {
             return cmp(r, o.dis(k)); // 圆外:-1, 圆上:0, 圆内:1
         }
     };
-
     int checkposCC(circle k1, circle k2) { // 返回两个圆的公切线数量
         if (cmp(k1.r, k2.r) == -1) swap(k1, k2);
         db dis = k1.o.dis(k2.o);
@@ -270,7 +265,6 @@ namespace geometry {
         }
         return ans;
     }
-
     struct polygon { // 多边形类
         int n; // 点数
         vector<point> p;
@@ -314,7 +308,6 @@ namespace geometry {
             else return -1;
         }
     };
-
     int checkPolyP(polygon poly, point q) { // O(n)判断点是否在一般多边形内
         // 必须保证简单多边形的点按逆时针给出 返回 2 内部, 1 边界, 0 外部
         int pd = 0;
@@ -346,7 +339,6 @@ namespace geometry {
         }
         return ans;
     }
-
     vector<point> convexHull(vector<point> A, int flag = 1) { // 凸包 flag=0 不严格 flag=1 严格
         int n = A.size(); vector<point> ans(n + n);
         sort(A.begin(), A.end()); int now = -1;
@@ -379,7 +371,6 @@ namespace geometry {
         }
         return ans;
     }
-
     vector<line> getHL(vector<line>& L) { // 求半平面交 逆时针方向存储
         sort(L.begin(), L.end());
         deque<line> q;
@@ -395,7 +386,6 @@ namespace geometry {
         for (int i = 0; i < q.size(); ++i) ans.push_back(q[i]);
         return ans;
     }
-
     db closestPoint(vector<point>& A, int l, int r) { // 最近点对, 先要按照 x 坐标排序
         if (r - l <= 5) {
             db ans = 1e20;
